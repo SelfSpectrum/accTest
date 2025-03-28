@@ -1,12 +1,10 @@
 // Crear el HTML dinámicamente
 document.body.innerHTML = `
     <div class="container text-center mt-5">
-        <h1 class="mb-4">Texto</h1>
+        
         <button id="themeButton" class="btn btn-dark rounded-circle d-flex align-items-center justify-content-center"
             style="width: 60px; height: 60px;"><i id="iconTheme" class="bi bi-moon"></i></button>
-        <p class = "p1">
-        Hamana
-        </p>
+        
     </div>
 `;
 
