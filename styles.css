@@ -8,7 +8,7 @@
     --exito: #27ae60;
 }
 
-/* Base Styles */
+/* Estilos base */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -59,7 +59,7 @@ header {
     opacity: 0.9;
 }
 
-/* Navigation */
+/* Navegación */
 nav ul {
     display: flex;
     list-style: none;
@@ -82,7 +82,7 @@ nav ul li a:hover {
     background: rgba(255,255,255,0.2);
 }
 
-/* Hero Section */
+/* Sección Héroe */
 .hero {
     background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.nostalgica.cl%2Fwp-content%2Fuploads%2F2020%2F08%2Ffoto.jpg&f=1&nofb=1&ipt=1886769c57321d047716c4fd8f57dc0baa19684c6be4fd0d39011a0e1b6198e3&ipo=images') no-repeat center center/cover;
     height: 500px;
@@ -136,7 +136,7 @@ nav ul li a:hover {
     transform: translateY(-3px);
 }
 
-/* Services Section */
+/* Sección de Servicios */
 .services {
     padding: 60px 0;
     background: white;
@@ -185,7 +185,7 @@ nav ul li a:hover {
     margin-top: 0;
 }
 
-/* Emergency Section */
+/* Sección de Emergencias */
 .emergency {
     background: var(--secundario);
     color: white;
@@ -202,7 +202,7 @@ nav ul li a:hover {
     color: var(--secundario);
 }
 
-/* Doctors Section */
+/* Sección de Doctores */
 .doctors {
     padding: 60px 0;
     background: #f5f7fa;
@@ -246,7 +246,7 @@ nav ul li a:hover {
     margin-top: 0;
 }
 
-/* Testimonials */
+/* Testimonios */
 .testimonials {
     padding: 60px 0;
     background: white;
@@ -272,7 +272,7 @@ nav ul li a:hover {
     color: var(--primario);
 }
 
-/* Footer */
+/* Pie de Página */
 footer {
     background: var(--oscuro);
     color: white;
@@ -287,7 +287,7 @@ footer {
 }
 
 .footer-column h3 {
-    color: var(--acento);
+    color: white;
     margin-top: 0;
 }
 
@@ -318,7 +318,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Responsive Adjustments */
+/* Ajustes Responsivos */
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;
