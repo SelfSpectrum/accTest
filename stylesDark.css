@@ -10,11 +10,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(33, 33, 33);
-    color: white;
+    background-color: white;
+    color: black;
     z-index: 1000; /* Asegura que esté por encima de otros elementos */
-
 }
+
+/*códigdo de style.css con .services oscuro*/
 
 /* Paleta de colores */
 :root {
@@ -157,7 +158,7 @@ nav ul li a:hover {
 /* Sección de Servicios */
 .services {
     padding: 60px 0;
-    background: white;
+    background-color: rgb(33, 33, 33);
 }
 
 .section-title {
