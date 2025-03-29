@@ -1,5 +1,5 @@
 // Crear el HTML dinámicamente
-document.body.innerHTML = `
+document.body.innerHTML += `
     <div>
         
         <button id="themeButton" class="btn btn-dark rounded-circle d-flex align-items-center justify-content-center"

@@ -31,6 +31,16 @@
     z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
 
+.bajo-contraste {
+    filter: contrast(80%);
+}
+
+.alto-contraste {
+    background-color: black !important;
+    color: yellow !important;
+    filter: contrast(150%);
+}
+
 /* Paleta de colores */
 :root {
     --primario: #009830;
