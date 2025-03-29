@@ -59,7 +59,7 @@ body {
     margin: 0;
     padding: 0;
     color: var(--oscuro);
-    background-color: #f9f9f9;
+    background-color: rgb(33, 33, 33);
 }
 
 .container {
