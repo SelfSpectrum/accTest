@@ -15,6 +15,21 @@
     z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
 
+#contrastButton {
+    position: fixed;
+    bottom: 90px; /* Distancia desde abajo */
+    right: 20px; /* Distancia desde la derecha */
+    width: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    color: rgb(33, 33, 33);
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
 /*códigdo de style.css con .services oscuro*/
 
 /* Paleta de colores */
