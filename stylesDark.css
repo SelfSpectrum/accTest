@@ -15,6 +15,24 @@
     z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
 
+#grayscaleButton {
+    position: fixed;
+    bottom: 90px; /* Distancia desde abajo */
+    right: 20px; /* Distancia desde la derecha */
+    width: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.grayscale {
+    filter: grayscale(100%) !important;
+    transition: filter 0.5s ease;
+}
+
 #contrastButton {
     position: fixed;
     bottom: 90px; /* Distancia desde abajo */

@@ -3,8 +3,9 @@ document.body.innerHTML += `
     <div>
         
         <button id="themeButton" class="btn btn-dark rounded-circle d-flex align-items-center justify-content-center"
-            style="width: 60px; height: 60px;"><i id="iconTheme" class="bi bi-moon"></i></button>
-       
+            style="width: 60px; height: 60px;"><i id="iconTheme" class="bi bi-moon"></i>
+        </button>
+        
     </div>
 
 `;
@@ -30,4 +31,3 @@ document.getElementById("themeButton").addEventListener("click", function() {
         icon.classList.replace("bi-brightness-high", "bi-moon"); // Cambia ícono a sol
     }
 });
-
