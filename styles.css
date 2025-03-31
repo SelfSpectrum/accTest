@@ -1,17 +1,27 @@
-/* Paleta de colores */
+/* =====================================================
+   PALETA DE COLORES PRINCIPAL
+   ===================================================== 
+   Definimos variables CSS que se utilizarán en todo el sitio.
+   Esto centraliza la gestión de colores y facilita cambios futuros.
+*/
 :root {
-    --primario: #009830;
-    --secundario: #c83600;
-    --acento: #054f26;
-    --claro: #ecf0f1;
-    --oscuro: #2c3e50;
-    --exito: #27ae60;
+    --primario: #009830;    /* Verde principal - Color institucional */
+    --secundario: #c83600;  /* Naranja - Color complementario para acentos */
+    --acento: #054f26;      /* Verde oscuro - Para botones y elementos interactivos */
+    --claro: #ecf0f1;       /* Gris muy claro - Para fondos de secciones */
+    --oscuro: #2c3e50;      /* Azul muy oscuro - Para textos y pie de página */
+    --exito: #27ae60;       /* Verde claro - Para mensajes de éxito */
 }
 
-/* Estilos base */
+/* =====================================================
+   ESTILOS BASE
+   ===================================================== 
+   Estilos fundamentales que establecen el aspecto general
+   del sitio y afectan a todos los elementos.
+*/
 body {
     font-family: 'Arial', sans-serif;
-    line-height: 1.6;
+    line-height: 1.6;               /* Mejora la legibilidad del texto */
     margin: 0;
     padding: 0;
     color: var(--oscuro);
@@ -19,23 +29,25 @@ body {
 }
 
 .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 90%;                     /* Ocupa el 90% del ancho disponible */
+    max-width: 1200px;              /* Limita el ancho máximo en pantallas grandes */
+    margin: 0 auto;                 /* Centra el contenido horizontalmente */
 }
 
-/* Estilos de cabecera */
+/* =====================================================
+   ENCABEZADO (HEADER)
+   ===================================================== */
 header {
-    background: linear-gradient(135deg, var(--primario), var(--secundario));
+    background: linear-gradient(135deg, var(--primario), var(--secundario)); /* Gradiente diagonal */
     color: white;
     padding: 1rem 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Sombra sutil para dar profundidad */
 }
 
 .header-content {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between;  /* Logo a la izquierda, navegación a la derecha */
+    align-items: center;             /* Alinea verticalmente los elementos */
 }
 
 .logo {
@@ -56,13 +68,15 @@ header {
 .logo-text p {
     margin: 0;
     font-size: 0.9rem;
-    opacity: 0.9;
+    opacity: 0.9;                   /* Ligeramente transparente para jerarquía visual */
 }
 
-/* Navegación */
+/* =====================================================
+   NAVEGACIÓN
+   ===================================================== */
 nav ul {
-    display: flex;
-    list-style: none;
+    display: flex;                   /* Organiza los elementos en horizontal */
+    list-style: none;                /* Elimina los puntos de lista */
 }
 
 nav ul li {
@@ -74,38 +88,40 @@ nav ul li a {
     text-decoration: none;
     font-weight: 600;
     padding: 5px 10px;
-    border-radius: 4px;
-    transition: background 0.3s;
+    border-radius: 4px;              /* Esquinas redondeadas */
+    transition: background 0.3s;     /* Animación suave al hacer hover */
 }
 
 nav ul li a:hover {
-    background: rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.2); /* Fondo blanco semitransparente al pasar el cursor */
 }
 
-/* Sección Héroe */
+/* =====================================================
+   SECCIÓN HÉROE
+   ===================================================== */
 .hero {
     background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.nostalgica.cl%2Fwp-content%2Fuploads%2F2020%2F08%2Ffoto.jpg&f=1&nofb=1&ipt=1886769c57321d047716c4fd8f57dc0baa19684c6be4fd0d39011a0e1b6198e3&ipo=images') no-repeat center center/cover;
     height: 500px;
     display: flex;
-    align-items: center;
+    align-items: center;             /* Centra verticalmente el contenido */
     color: white;
     text-align: center;
-    position: relative;
+    position: relative;              /* Permite posicionar el pseudo-elemento ::before */
 }
 
 .hero::before {
-    content: '';
+    content: '';                     /* Necesario para que el pseudo-elemento sea visible */
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.5);     /* Overlay oscuro para mejorar legibilidad del texto */
 }
 
 .hero-content {
-    position: relative;
-    z-index: 1;
+    position: relative;              /* Lo coloca por encima del overlay oscuro */
+    z-index: 1;                      /* Asegura que esté por encima del pseudo-elemento */
     width: 100%;
 }
 
@@ -116,8 +132,8 @@ nav ul li a:hover {
 
 .hero p {
     font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto 30px;
+    max-width: 700px;                /* Limita ancho para mejorar legibilidad */
+    margin: 0 auto 30px;             /* Centra el párrafo horizontalmente */
 }
 
 .btn {
@@ -126,17 +142,19 @@ nav ul li a:hover {
     background: var(--acento);
     color: white;
     text-decoration: none;
-    border-radius: 30px;
+    border-radius: 30px;             /* Botón muy redondeado - estilo pill */
     font-weight: bold;
-    transition: transform 0.3s, background 0.3s;
+    transition: transform 0.3s, background 0.3s; /* Animaciones al hacer hover */
 }
 
 .btn:hover {
-    background: var(--secundario);
-    transform: translateY(-3px);
+    background: var(--secundario);   /* Cambia de color al pasar el cursor */
+    transform: translateY(-3px);     /* Efecto de elevación */
 }
 
-/* Sección de Servicios */
+/* =====================================================
+   SECCIÓN DE SERVICIOS
+   ===================================================== */
 .services {
     padding: 60px 0;
     background: white;
@@ -150,20 +168,20 @@ nav ul li a:hover {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 30px;                       /* Espacio entre tarjetas */
 }
 
 .service-card {
     background: var(--claro);
     border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    overflow: hidden;                /* Asegura que las imágenes no desborden */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Sombra sutil */
+    transition: transform 0.3s;      /* Animación al hover */
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px);    /* Efecto de flotación */
 }
 
 .service-img {
@@ -185,7 +203,9 @@ nav ul li a:hover {
     margin-top: 0;
 }
 
-/* Sección de Emergencias */
+/* =====================================================
+   SECCIÓN DE EMERGENCIAS
+   ===================================================== */
 .emergency {
     background: var(--secundario);
     color: white;
@@ -199,10 +219,12 @@ nav ul li a:hover {
 
 .emergency .btn {
     background: white;
-    color: var(--secundario);
+    color: var(--secundario);        /* Inversión de colores para destacar */
 }
 
-/* Sección de Doctores */
+/* =====================================================
+   SECCIÓN DE DOCTORES
+   ===================================================== */
 .doctors {
     padding: 60px 0;
     background: #f5f7fa;
@@ -210,7 +232,7 @@ nav ul li a:hover {
 
 .doctors-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Grid responsivo */
     gap: 30px;
 }
 
@@ -246,7 +268,9 @@ nav ul li a:hover {
     margin-top: 0;
 }
 
-/* Testimonios */
+/* =====================================================
+   TESTIMONIOS
+   ===================================================== */
 .testimonials {
     padding: 60px 0;
     background: white;
@@ -257,7 +281,7 @@ nav ul li a:hover {
     padding: 30px;
     border-radius: 8px;
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 800px;                /* Limita ancho para mejor legibilidad */
     text-align: center;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
@@ -272,7 +296,9 @@ nav ul li a:hover {
     color: var(--primario);
 }
 
-/* Pie de Página */
+/* =====================================================
+   PIE DE PÁGINA
+   ===================================================== */
 footer {
     background: var(--oscuro);
     color: white;
@@ -301,40 +327,648 @@ footer {
 }
 
 .footer-column ul li a {
-    color: #bdc3c7;
+    color: #bdc3c7;                  /* Gris claro para los enlaces del footer */
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .footer-column ul li a:hover {
-    color: white;
+    color: white;                    /* Al pasar el cursor, enlaces más visibles */
 }
 
 .copyright {
     text-align: center;
     padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255,255,255,0.1); /* Separador sutil */
     color: #bdc3c7;
     font-size: 0.9rem;
 }
 
-/* Ajustes Responsivos */
+/* =====================================================
+   AJUSTES RESPONSIVOS
+   ===================================================== 
+   Estos estilos se aplican en pantallas con ancho máximo de 768px,
+   adaptando el diseño para dispositivos móviles.
+*/
 @media (max-width: 768px) {
     .header-content {
-        flex-direction: column;
+        flex-direction: column;      /* Apila logo y navegación */
         text-align: center;
     }
     
     nav ul {
         margin-top: 20px;
-        justify-content: center;
+        justify-content: center;     /* Centra los enlaces de navegación */
     }
     
     nav ul li {
-        margin: 0 10px;
+        margin: 0 10px;              /* Ajusta márgenes en móvil */
     }
     
     .hero h2 {
-        font-size: 2rem;
+        font-size: 2rem;             /* Títulos más pequeños en móvil */
     }
+}
+
+/* =====================================================
+   FUNCIONALIDADES DE ACCESIBILIDAD
+   ===================================================== 
+   Las siguientes secciones implementan características 
+   para mejorar la accesibilidad del sitio web.
+*/
+
+/* -----------------------------------------------------
+   BOTÓN DE ACCESIBILIDAD
+   ----------------------------------------------------- 
+   Un botón fijo en la esquina inferior derecha que 
+   permite acceder a las herramientas de accesibilidad.
+*/
+.accessibility-container {
+    position: fixed;                 /* El botón permanece fijo en la pantalla */
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;                   /* Asegura que esté por encima de otros elementos */
+}
+
+#accessibility-btn {
+    background: var(--primario);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 50%;              /* Forma circular */
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar visualmente */
+    transition: transform 0.3s;      /* Animación suave */
+}
+
+/* -----------------------------------------------------
+   MENÚ DE ACCESIBILIDAD
+   ----------------------------------------------------- 
+   Panel que contiene las diferentes opciones de accesibilidad.
+   Se muestra al hacer clic en el botón de accesibilidad.
+*/
+.accessibility-menu {
+    display: none;                   /* Oculto por defecto, se muestra con JavaScript */
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    width: 250px;                    /* Ancho suficiente para acomodar el submenú */
+}
+
+.accessibility-menu h3 {
+    margin: 0 0 10px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.accessibility-menu button {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 5px;
+    border: none;
+    background: var(--acento);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.accessibility-menu button:hover {
+    background: var(--secundario);   /* Cambio de color al pasar el cursor */
+}
+
+/* -----------------------------------------------------
+   MENÚ DESPLEGABLE DE CONTRASTE
+   ----------------------------------------------------- 
+   Submenú que ofrece diferentes opciones de contraste
+   para usuarios con dificultades visuales.
+*/
+.accessibility-option {
+    position: relative;
+    width: 100%;
+}
+
+.contrast-submenu {
+    display: none;                   /* Oculto por defecto, se muestra con JavaScript */
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    z-index: 1001;                   /* Superior al menú principal */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.contrast-submenu button {
+    text-align: left;
+    padding: 8px 10px;
+    width: 100%;
+    background: white;
+    color: black;
+    border: none;
+    border-bottom: 1px solid #eee;
+}
+
+.contrast-submenu button:last-child {
+    border-bottom: none;             /* Elimina el borde del último botón */
+}
+
+.contrast-submenu button:hover {
+    background-color: #f0f0f0;       /* Fondo gris claro al pasar el cursor */
+}
+
+/* -----------------------------------------------------
+   OPCIONES DE RESALTADO DE TEXTO
+   ----------------------------------------------------- 
+   Estilos que se aplican cuando se activa la opción
+   de resaltado de texto general.
+*/
+.highlighted-text {
+    background-color: yellow !important;
+    color: black !important;
+}
+
+/* -----------------------------------------------------
+   RECUADRO DE ENFOQUE HORIZONTAL
+   ----------------------------------------------------- 
+   Crea una franja horizontal transparente que sigue al cursor,
+   oscureciendo el resto de la página para facilitar la concentración.
+*/
+.focus-overlay-top, .focus-overlay-bottom {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Negro semitransparente */
+    z-index: 999;
+    pointer-events: none;            /* Permite interactuar con elementos debajo */
+    display: none;                   /* Oculto por defecto, se muestra con JavaScript */
+}
+
+.focus-overlay-top {
+    top: 0;
+    /* La altura se ajusta dinámicamente con JavaScript */
+}
+
+.focus-overlay-bottom {
+    /* La posición top y altura se ajustan dinámicamente con JavaScript */
+    bottom: 0;
+}
+
+/* -----------------------------------------------------
+   RESALTADO DE PÁRRAFOS
+   ----------------------------------------------------- 
+   Estilos que se aplican para destacar visualmente
+   cada párrafo independientemente de su color de fondo.
+*/
+.paragraph-highlighted {
+    /* Estructura visual clara con bordes y espacio */
+    border: 1px solid #ccc;
+    border-left: 5px solid var(--primario); /* Indicador visual en el borde izquierdo */
+    border-radius: 5px;
+    
+    /* Espacio adicional alrededor del texto */
+    margin: 15px 0;
+    padding: 12px 15px 12px 20px;
+    
+    /* Efectos sutiles para añadir profundidad */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    
+    /* Para posicionar los elementos decorativos */
+    position: relative;
+    
+    /* Animación suave al aplicar/quitar estilos */
+    transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el ratón sobre un párrafo resaltado */
+.paragraph-highlighted:hover {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+    border-left-width: 8px;                   /* Borde izquierdo más grueso */
+}
+
+/* Líneas decorativas superior e inferior */
+.paragraph-highlighted::before,
+.paragraph-highlighted::after {
+    content: "";
+    height: 1px;
+    background: linear-gradient(to right, var(--primario), transparent);
+    width: 100%;
+    position: absolute;
+    left: 0;
+}
+
+.paragraph-highlighted::before {
+    top: 0;                          /* Línea en la parte superior */
+}
+
+.paragraph-highlighted::after {
+    bottom: 0;                       /* Línea en la parte inferior */
+}
+
+/* =====================================================
+   MODOS DE ALTO CONTRASTE
+   ===================================================== 
+   Estilos específicos para cada modo de contraste que cumplen
+   con las recomendaciones de accesibilidad WCAG (ratio mínimo 7:1).
+   
+   Usamos !important para asegurar que estos estilos sobrescriban
+   cualquier otro estilo existente en la página.
+*/
+
+/* -----------------------------------------------------
+   MODO NEGRO SOBRE BLANCO (21:1)
+   ----------------------------------------------------- */
+body.contrast-dark {
+    background-color: white !important;
+    color: black !important;
+}
+
+body.contrast-dark *:not(#accessibility-btn):not(.contrast-submenu *) {
+    background-color: white !important;
+    color: black !important;
+    border-color: black !important;
+}
+
+/* -----------------------------------------------------
+   MODO NEGRO SOBRE AMARILLO (12:1)
+   ----------------------------------------------------- */
+body.contrast-yellow {
+    background-color: #FFFF00 !important;
+    color: black !important;
+}
+
+body.contrast-yellow *:not(#accessibility-btn):not(.contrast-submenu *) {
+    background-color: #FFFF00 !important;
+    color: black !important;
+    border-color: black !important;
+}
+
+/* -----------------------------------------------------
+   MODO BLANCO SOBRE AZUL (8:1)
+   ----------------------------------------------------- */
+body.contrast-blue {
+    background-color: #0000AA !important;
+    color: white !important;
+}
+
+body.contrast-blue *:not(#accessibility-btn):not(.contrast-submenu *) {
+    background-color: #0000AA !important;
+    color: white !important;
+    border-color: white !important;
+}
+
+/* -----------------------------------------------------
+   MODO BLANCO SOBRE VERDE (7:1)
+   ----------------------------------------------------- */
+body.contrast-green {
+    background-color: #008800 !important;
+    color: white !important;
+}
+
+body.contrast-green *:not(#accessibility-btn):not(.contrast-submenu *) {
+    background-color: #008800 !important;
+    color: white !important;
+    border-color: white !important;
+}
+
+/* -----------------------------------------------------
+   MODO BLANCO SOBRE ROJO (7:1)
+   ----------------------------------------------------- */
+body.contrast-red {
+    background-color: #AA0000 !important;
+    color: white !important;
+}
+
+body.contrast-red *:not(#accessibility-btn):not(.contrast-submenu *) {
+    background-color: #AA0000 !important;
+    color: white !important;
+    border-color: white !important;
+}
+
+/* =====================================================
+   EXCEPCIONES Y AJUSTES ESPECIALES DE ACCESIBILIDAD
+   ===================================================== 
+   Estos estilos garantizan que elementos críticos como el
+   botón de accesibilidad y sus menús permanezcan visibles
+   y usables en todos los modos de contraste.
+*/
+
+/* Botón de accesibilidad siempre destacado */
+body[class*="contrast-"] #accessibility-btn {
+    border: 3px solid #FFFFFF !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Ajustes específicos por modo de contraste */
+body.contrast-dark #accessibility-btn,
+body.contrast-yellow #accessibility-btn {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+}
+
+body.contrast-blue #accessibility-btn,
+body.contrast-green #accessibility-btn,
+body.contrast-red #accessibility-btn {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+}
+
+/* Estilo para el menú de accesibilidad en modos de contraste */
+body.contrast-dark .accessibility-menu,
+body.contrast-yellow .accessibility-menu {
+    background-color: #FFFFFF !important;
+    border: 3px solid #000000 !important;
+}
+
+body.contrast-blue .accessibility-menu,
+body.contrast-green .accessibility-menu,
+body.contrast-red .accessibility-menu {
+    background-color: #000000 !important;
+    border: 3px solid #FFFFFF !important;
+}
+
+/* Estilo para botones del menú de accesibilidad */
+body.contrast-dark .accessibility-menu button,
+body.contrast-yellow .accessibility-menu button {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+    border: 2px solid #000000 !important;
+}
+
+body.contrast-blue .accessibility-menu button,
+body.contrast-green .accessibility-menu button,
+body.contrast-red .accessibility-menu button {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+    border: 2px solid #FFFFFF !important;
+}
+
+/* Estilo para el submenú de contraste */
+body[class*="contrast-"] .contrast-submenu {
+    background-color: #FFFFFF !important;
+    border: 2px solid #000000 !important;
+}
+
+body[class*="contrast-"] .contrast-submenu button {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+    border-bottom: 1px solid #CCCCCC !important;
+    text-align: left !important;
+}
+
+body[class*="contrast-"] .contrast-submenu button:hover {
+    background-color: #EEEEEE !important;
+}
+
+/* =====================================================
+   COMPATIBILIDAD ENTRE FUNCIONES DE ACCESIBILIDAD
+   ===================================================== 
+   Estos estilos garantizan que las diferentes opciones
+   de accesibilidad funcionen correctamente cuando se 
+   utilizan simultáneamente.
+*/
+
+/* Asegurar que los overlays del recuadro de enfoque mantienen su transparencia */
+body[class*="contrast-"] .focus-overlay-top,
+body[class*="contrast-"] .focus-overlay-bottom {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    z-index: 1100 !important; /* Mayor z-index para sobreponerse a otros elementos */
+}
+
+/* Estilos de resaltado de texto adaptados a cada modo de contraste */
+body .highlighted-text {
+    background-color: yellow !important;
+    color: black !important;
+}
+
+body.contrast-dark .highlighted-text {
+    background-color: #FFFF00 !important;
+    color: #000000 !important;
+    border: none !important;
+}
+
+body.contrast-yellow .highlighted-text {
+    background-color: #FF9900 !important; /* Naranja más oscuro para contrastar con amarillo */
+    color: #000000 !important;
+    border: none !important;
+}
+
+body.contrast-blue .highlighted-text {
+    background-color: #FFFF00 !important;
+    color: #000000 !important;
+    border: none !important;
+}
+
+body.contrast-green .highlighted-text {
+    background-color: #FFFF00 !important;
+    color: #000000 !important;
+    border: none !important;
+}
+
+body.contrast-red .highlighted-text {
+    background-color: #FFFF00 !important;
+    color: #000000 !important;
+    border: none !important;
+}
+
+/* Asegurar que los elementos de la interfaz de accesibilidad mantengan su visibilidad */
+body[class*="contrast-"] .accessibility-container,
+body[class*="contrast-"] .accessibility-menu,
+body[class*="contrast-"] .contrast-submenu {
+    z-index: 1200 !important; /* Mayor z-index para que siempre queden por encima */
+}
+
+/* =====================================================
+   SOLUCIÓN DEFINITIVA PARA COMPATIBILIDAD
+   ===================================================== 
+   Estos estilos garantizan que todas las funciones de
+   accesibilidad sean completamente compatibles entre sí.
+*/
+
+/* Asegurar que los overlays del recuadro de enfoque siempre sean semitransparentes */
+.focus-overlay-top, 
+.focus-overlay-bottom {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    z-index: 2000 !important;
+    /* Prevenir que las reglas de contraste afecten a estos elementos */
+    all: initial !important;
+    position: fixed !important;
+    left: 0 !important;
+    width: 100% !important;
+    pointer-events: none !important;
+    display: block !important;
+    background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* Especificar reglas de posicionamiento que no deben ser inicializadas */
+.focus-overlay-top {
+    top: 0 !important;
+}
+
+.focus-overlay-bottom {
+    bottom: 0 !important;
+}
+
+/* Reglas específicas para resaltado de texto en cada modo de contraste */
+body:not([class*="contrast-"]) .highlighted-text {
+    background-color: yellow !important;
+    color: black !important;
+}
+
+body.contrast-dark .highlighted-text {
+    background-color: #FFFF00 !important;
+    color: #000000 !important;
+    border: 1px solid #000000 !important;
+}
+
+body.contrast-yellow .highlighted-text {
+    background-color: #FF9900 !important;
+    color: #000000 !important;
+    border: 1px solid #000000 !important;
+}
+
+body.contrast-blue .highlighted-text {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+    border: 1px solid #FFFFFF !important;
+}
+
+body.contrast-green .highlighted-text {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+    border: 1px solid #FFFFFF !important;
+}
+
+body.contrast-red .highlighted-text {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+    border: 1px solid #FFFFFF !important;
+}
+
+/* Z-index elevados para la interfaz de accesibilidad */
+.accessibility-container {
+    z-index: 3000 !important;
+}
+
+.accessibility-menu,
+.contrast-submenu {
+    z-index: 3001 !important;
+}
+
+/* =====================================================
+   SOLUCIÓN PARA EL RECUADRO DE ENFOQUE
+   ===================================================== */
+
+/* Estilos completamente nuevos para los overlays del recuadro */
+.focus-frame-overlay {
+    position: fixed !important;
+    left: 0 !important;
+    width: 100% !important;
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    pointer-events: none !important;
+    z-index: 9999 !important;
+    display: none;
+}
+
+.focus-frame-top {
+    top: 0 !important;
+}
+
+.focus-frame-bottom {
+    bottom: 0 !important;
+}
+
+/* Garantizar que estas clases siempre tengan prioridad */
+body[class*="contrast-"] .focus-frame-overlay,
+html .focus-frame-overlay,
+:root .focus-frame-overlay {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* =====================================================
+   SOLUCIÓN FINAL PARA EL RECUADRO DE ENFOQUE - VERSIÓN MEJORADA
+   ===================================================== */
+
+/* Contenedor principal del recuadro de enfoque - VERSIÓN MEJORADA */
+#unique-focus-container {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    pointer-events: none !important; /* Permite interactuar con elementos debajo */
+    z-index: 9999 !important;
+    display: none !important; /* Inicialmente oculto */
+    background-color: transparent !important;
+    /* Garantiza que no herede estilos de contraste */
+    all: initial !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    pointer-events: none !important;
+    z-index: 9999 !important;
+}
+
+/* Overlay superior (parte oscurecida) - VERSIÓN MEJORADA */
+#unique-focus-top {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 0 !important; /* Se ajustará dinámicamente */
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    /* Evita que cualquier otro estilo afecte la transparencia */
+    opacity: 1 !important;
+    mix-blend-mode: normal !important;
+}
+
+/* Área de enfoque (franja transparente) - VERSIÓN MEJORADA */
+#unique-focus-area {
+    position: absolute !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 120px !important; /* Altura fija del área visible */
+    background-color: transparent !important;
+    /* Guías visuales mejoradas */
+    border-top: 2px dashed rgba(255, 255, 255, 0.7) !important;
+    border-bottom: 2px dashed rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Overlay inferior (parte oscurecida) - VERSIÓN MEJORADA */
+#unique-focus-bottom {
+    position: absolute !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 0 !important; /* Se ajustará dinámicamente */
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    /* Evita que cualquier otro estilo afecte la transparencia */
+    opacity: 1 !important;
+    mix-blend-mode: normal !important;
+}
+
+/* Garantiza que las áreas oscurecidas siempre tengan su color correcto */
+html body #unique-focus-top,
+html body #unique-focus-bottom,
+body[class*="contrast-"] #unique-focus-top,
+body[class*="contrast-"] #unique-focus-bottom,
+:root body #unique-focus-top,
+:root body #unique-focus-bottom {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    opacity: 1 !important;
+}
+
+/* Asegura que el recuadro de enfoque tenga máxima prioridad */
+#unique-focus-container,
+#unique-focus-top,
+#unique-focus-area,
+#unique-focus-bottom {
+    visibility: visible !important;
 }
