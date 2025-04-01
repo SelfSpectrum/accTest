@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
    */
 
   // Elementos del menú de accesibilidad
-  const btn = document.getElementById("accessibility-btn");
   const menu = document.querySelector(".accessibility-menu");
 
   // Elementos para modos de contraste
@@ -53,24 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let highlightActive = false; // Estado del resaltado de texto
   let paragraphHighlightActive = false; // Estado del resaltado de párrafos
   let currentContrast = "default"; // Modo de contraste actual
-
-  /**
-   * MENÚ PRINCIPAL DE ACCESIBILIDAD
-   * ==============================
-   * Controles para mostrar/ocultar el menú principal de accesibilidad
-   */
-
-  // Mostrar/ocultar menú principal
-  btn.addEventListener("click", function () {
-    menu.style.display = menu.style.display === "block" ? "none" : "block";
-  });
-
-  // Cerrar menú al hacer clic fuera
-  document.addEventListener("click", function (e) {
-    if (!btn.contains(e.target) && !menu.contains(e.target)) {
-      menu.style.display = "none";
-    }
-  });
 
   /**
    * MODOS DE ALTO CONTRASTE
