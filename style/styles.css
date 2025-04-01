@@ -426,45 +426,12 @@ footer {
     font-size: 14px;
 }
 
-.accessibility-menu button:hover {
-    background: var(--secundario); /* Cambio de color al pasar el cursor */
-}
-
 /* -----------------------------------------------------
    MENÚ DESPLEGABLE DE CONTRASTE
    -----------------------------------------------------
    Submenú que ofrece diferentes opciones de contraste
    para usuarios con dificultades visuales.
 */
-.accessibility-option {
-    position: relative;
-    width: 100%;
-}
-
-.contrast-submenu {
-    display: none; /* Oculto por defecto, se muestra con JavaScript */
-    position: absolute;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 100%;
-    z-index: 1001; /* Superior al menú principal */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.contrast-submenu button {
-    text-align: left;
-    padding: 8px 10px;
-    width: 100%;
-    background: white;
-    color: black;
-    border: none;
-    border-bottom: 1px solid #eee;
-}
-
-.contrast-submenu button:last-child {
-    border-bottom: none; /* Elimina el borde del último botón */
-}
 
 .contrast-submenu button:hover {
     background-color: #f0f0f0; /* Fondo gris claro al pasar el cursor */
