@@ -7,6 +7,7 @@
     <link rel="icon" href="https://hospitalcopiapo.cl/wp-content/uploads/2024/04/cropped-LOGO-HRC-LETRAS-BLANCAS-236x191.png">
     <link rel="stylesheet" href="styles.css"/>
     <style>
+
         .navbar-bottom {
             position: fixed;
             bottom: 0;
@@ -31,6 +32,59 @@
         .logo2 {
             font-size: 24px;
             font-weight: bold;
+        }
+    </style>
+
+    <style type="text/css">
+
+        * {
+            padding: 0px;
+            margin:  0px;
+        }
+
+        #HI{
+            margin: auto;
+            width: 500px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        ul, ol{
+            list-style:none;
+        }
+
+        .puto li a{
+            background-color: #000;
+            color: #fff;
+            text-decoration:none;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        .puto li a:hover {
+            background: color #434343;
+        }
+
+        .puto > li {
+            float:right;
+        }
+
+        .puto li ul {
+            display:none;
+            position: absolute;
+            min-width: 140px;
+        }
+
+        .puto li:hover > ul {
+            display: block;
+        }
+
+        .puto li ul li {
+            position: relative;
+        }
+
+        .puto li ul li ul {
+            right: -140px;
+            top: 0px;
         }
 
     </style>
@@ -229,16 +283,24 @@
                 Acecibilidad
             </div>
             <ul class="nav-menu2">
-                <li><a>Visual</a>
-                    <ul>
-                        <li><a href="Alto constraste"></a></li>
-                        <li><a href="Daltonico_1"></a></li>
-                        <li><a href="Daltonico_2"></a></li>
+                <div id="HI">
+                    <ul class="puto">
+                        <li><a>Visual</a>
+                            <ul>
+                                <li><a href="#">Alto Constraste</a></li>
+                                <li><a href="#">Daltonico</a>
+                                    <ul>
+                                        <li><a href="#">Tipo 1</a></li>
+                                        <li><a href="#">Tipo 2</a></li>
+                                    </ul>    
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Nosotros</a></li>
+                        <li><a href="#">Contacto</a></li>
                     </ul>
-                </li>
-                <li><a href="#">Servicios</a></li>
-                <li><a href="#">Nosotros</a></li>
-                <li><a href="#">Contacto</a></li>
+                </div>
             </ul>
         </div>
     </nav>
