@@ -95,8 +95,8 @@ document.addEventListener("DOMContentLoaded", function () {
       const href = links[i].getAttribute("href");
       if (
         href &&
-        (href.includes("./style/styles.css") ||
-          href.includes("./style/stylesDark.css"))
+        (href.includes("../style/styles.css") ||
+          href.includes("../style/stylesDark.css"))
       ) {
         return links[i];
       }
@@ -133,14 +133,14 @@ document.addEventListener("DOMContentLoaded", function () {
       if (currentStylesheet) {
         // Si encontramos el stylesheet actual, cambiamos su href
         currentStylesheet.href = currentStylesheet.href.replace(
-          "./style/stylesDark.css",
-          "./style/styles.css",
+          "../style/stylesDark.css",
+          "../style/styles.css",
         );
       } else {
         // Si no encontramos ningún stylesheet, creamos uno nuevo
         const newStylesheet = document.createElement("link");
         newStylesheet.rel = "stylesheet";
-        newStylesheet.href = "./style/styles.css";
+        newStylesheet.href = "../style/styles.css";
         document.head.appendChild(newStylesheet);
       }
 
@@ -152,14 +152,14 @@ document.addEventListener("DOMContentLoaded", function () {
       if (currentStylesheet) {
         // Si encontramos el stylesheet actual, cambiamos su href
         currentStylesheet.href = currentStylesheet.href.replace(
-          "./style/styles.css",
-          "./style/stylesDark.css",
+          "../style/styles.css",
+          "../style/stylesDark.css",
         );
       } else {
         // Si no encontramos ningún stylesheet, creamos uno nuevo
         const newStylesheet = document.createElement("link");
         newStylesheet.rel = "stylesheet";
-        newStylesheet.href = "./style/stylesDark.css";
+        newStylesheet.href = "../style/stylesDark.css";
         document.head.appendChild(newStylesheet);
       }
 
@@ -191,8 +191,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const currentStylesheet = findCurrentStylesheet();
         if (currentStylesheet) {
           currentStylesheet.href = currentStylesheet.href.replace(
-            "./style/stylesDark.css",
-            "./style/styles.css",
+            "../style/stylesDark.css",
+            "../style/styles.css",
           );
         }
 
