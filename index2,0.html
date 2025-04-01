@@ -6,6 +6,34 @@
     <title>Hospital Regional de Copiapó</title>
     <link rel="icon" href="https://hospitalcopiapo.cl/wp-content/uploads/2024/04/cropped-LOGO-HRC-LETRAS-BLANCAS-236x191.png">
     <link rel="stylesheet" href="styles.css"/>
+    <style>
+        .navbar-bottom {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .navbar-container2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 60px;
+        }
+
+        .logo2 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -27,6 +55,11 @@
                     <li><a tabindex="5"href="#">Contacto</a></li>
                 </ul>
             </nav>
+            <nav2>
+                <ul>
+
+                </ul>
+            </nav2>
         </div>
     </header>
     
@@ -189,5 +222,25 @@
             </div>
         </div>
     </footer>
+
+    <nav class="navbar-bottom">
+        <div class="navbar-container2">
+            <div class="logo2">
+                Acecibilidad
+            </div>
+            <ul class="nav-menu2">
+                <li><a>Visual</a>
+                    <ul>
+                        <li><a href="Alto constraste"></a></li>
+                        <li><a href="Daltonico_1"></a></li>
+                        <li><a href="Daltonico_2"></a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
 </body>
 </html>
