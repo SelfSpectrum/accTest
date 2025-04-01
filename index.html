@@ -51,29 +51,6 @@
             <button id="accessibility-btn">🧠</button>
             <div class="accessibility-menu">
                 <h3>Opciones de Accesibilidad</h3>
-                <div class="accessibility-option">
-                    <button id="contrast-toggle">
-                        Modo de Alto Contraste ▼
-                    </button>
-                    <div class="contrast-submenu">
-                        <button data-contrast="default">Normal</button>
-                        <button data-contrast="dark">
-                            Negro sobre Blanco (21:1)
-                        </button>
-                        <button data-contrast="yellow">
-                            Negro sobre Amarillo (12:1)
-                        </button>
-                        <button data-contrast="blue">
-                            Blanco sobre Azul (8:1)
-                        </button>
-                        <button data-contrast="green">
-                            Blanco sobre Verde (7:1)
-                        </button>
-                        <button data-contrast="red">
-                            Blanco sobre Rojo (7:1)
-                        </button>
-                    </div>
-                </div>
                 <button id="increase-font">Aumentar Texto</button>
                 <button id="decrease-font">Disminuir Texto</button>
                 <button id="highlighted-text">Resaltar texto</button>
@@ -228,14 +205,15 @@
                         <!-- First Dropup -->
                         <div class="btn-group dropup">
                             <button id="contrast-toggle" type="button" class="btn btn-primary dropdown-toggle dropdown-btn" data-bs-toggle="dropdown" aria-expanded="false">
-                                Modo de Alto Contraste ▼
+                                Modo de Alto Contraste
                             </button>
-                            <ul class="dropdown-menu">
-                                <li><button class="dropdown-item" type="button">Action 1</button></li>
-                                <li><button class="dropdown-item" type="button">Action 2</button></li>
-                                <li><button class="dropdown-item" type="button">Action 3</button></li>
-                                <li><button class="dropdown-item" type="button">Action 4</button></li>
-                                <li><button class="dropdown-item" type="button">Action 5</button></li>
+                            <ul>
+                                <li><button data-contrast="red" class="dropdown-item" type="button">Blanco sobre Rojo (7:1)</button></li>
+                                <li><button data-contrast="green" class="dropdown-item" type="button">Blanco sobre Verde (7:1)</button></li>
+                                <li><button data-contrast="blue" class="dropdown-item" type="button">Blanco sobre Azul (8:1)</button></li>
+                                <li><button data-contrast="yellow" class="dropdown-item" type="button">Negro sobre Amarillo (12:1)</button></li>
+                                <li><button data-contrast="dark "class="dropdown-item" type="button">Negro sobre Blanco (21:1)</button></li>
+                                <li><button class="dropdown-menu" class="dropdown-item" type="button">Normal</button></li>
                             </ul>
                         </div>
 
