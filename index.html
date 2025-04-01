@@ -46,21 +46,6 @@
             </div>
         </header>
 
-        <!-- Botón de accesibilidad -->
-        <div class="accessibility-container">
-            <button id="accessibility-btn">🧠</button>
-            <div class="accessibility-menu">
-                <h3>Opciones de Accesibilidad</h3>
-                <button id="increase-font">Aumentar Texto</button>
-                <button id="decrease-font">Disminuir Texto</button>
-                <button id="highlighted-text">Resaltar texto</button>
-                <button id="focus-frame-toggle">Recuadro de Enfoque</button>
-                <button id="paragraph-highlight-toggle">
-                    Resaltar Párrafos
-                </button>
-            </div>
-        </div>
-
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content container">
@@ -220,28 +205,26 @@
                         <!-- Second Dropup -->
                         <div class="btn-group dropup">
                             <button type="button" class="btn btn-success dropdown-toggle dropdown-btn" data-bs-toggle="dropdown" aria-expanded="false">
-                                Menu 2
+                                Accesibilidad Visual
                             </button>
                             <ul class="dropdown-menu">
-                                <li><button class="dropdown-item" type="button">Option A</button></li>
-                                <li><button class="dropdown-item" type="button">Option B</button></li>
+                                <li><button class="dropdown-item" type="button" id="increase-font">Aumentar Texto</button></li>
+                                <li><button class="dropdown-item" type="button" id="decrease-font">Disminuir Texto</button></li>
                                 <li><button class="dropdown-item" type="button">Option C</button></li>
                                 <li><button class="dropdown-item" type="button">Option D</button></li>
-                                <li><button class="dropdown-item" type="button">Option E</button></li>
                             </ul>
                         </div>
 
                         <!-- Third Dropup -->
                         <div class="btn-group dropup">
                             <button type="button" class="btn btn-danger dropdown-toggle dropdown-btn" data-bs-toggle="dropdown" aria-expanded="false">
-                                Menu 3
+                                Accesibilidad Cognitiva
                             </button>
                             <ul class="dropdown-menu">
-                                <li><button class="dropdown-item" type="button">Choice 1</button></li>
-                                <li><button class="dropdown-item" type="button">Choice 2</button></li>
-                                <li><button class="dropdown-item" type="button">Choice 3</button></li>
-                                <li><button class="dropdown-item" type="button">Choice 4</button></li>
-                                <li><button class="dropdown-item" type="button">Choice 5</button></li>
+                                <li><button class="dropdown-item" type="button" id="highlighted-text">Resaltar texto</button></li>
+                                <li><button class="dropdown-item" type="button" id="focus-frame-toggle">Recuadro de Enfoque</button></li>
+                                <li><button class="dropdown-item" type="button" id="paragraph-highlight-toggle">
+                                                   Resaltar Párrafos</button></li>
                             </ul>
                         </div>
                     </div>
@@ -299,18 +282,5 @@
         <!-- Bootstrap JS and Popper.js -->
         <script src="./script/accessibility.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script>
-            // Optional: Add click handlers for the dropdown items
-            document.addEventListener('DOMContentLoaded', function() {
-                // Add click handlers to all dropdown items
-                document.querySelectorAll('.dropdown-item').forEach(item => {
-                    item.addEventListener('click', function() {
-                        const menuText = this.closest('.btn-group').querySelector('.dropdown-toggle').textContent.trim();
-                        const itemText = this.textContent.trim();
-                        alert(`${menuText}: ${itemText} clicked!`);
-                    });
-                });
-            });
-        </script>
     </body>
 </html>
