@@ -1,0 +1,59 @@
+/*Cambio a modo oscuro*/
+
+#themeButton {
+    position: fixed;
+    bottom: 20px; /* Distancia desde abajo */
+    right: 20px; /* Distancia desde la derecha */
+    width: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(33, 33, 33);
+    color: white;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+#grayscaleButton {
+    position: fixed;
+    bottom: 90px; /* Distancia desde abajo */
+    right: 20px; /* Distancia desde la derecha */
+    width: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.grayscale {
+    filter: grayscale(100%) !important;
+    transition: filter 0.5s ease;
+}
+
+#contrastButton {
+    position: fixed;
+    bottom: 90px; /* Distancia desde abajo */
+    right: 20px; /* Distancia desde la derecha */
+    width: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    color: rgb(33, 33, 33);
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.bajo-contraste {
+    filter: contrast(80%);
+}
+
+.alto-contraste {
+    background-color: black !important;
+    color: yellow !important;
+    filter: contrast(150%);
+}
