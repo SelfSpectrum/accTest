@@ -19,8 +19,7 @@ body {
 }
 
 .container {
-    width: 90%;
-    max-width: 1200px;
+    max-width: 80%;
     margin: 0 auto;
 }
 
@@ -35,6 +34,7 @@ header {
 .header-content {
     display: flex;
     justify-content: space-between;
+    text-align: center;
     align-items: center;
 }
 
@@ -60,26 +60,42 @@ header {
 }
 
 /* Navegación */
-nav ul {
+nav {
     display: flex;
+    align-items: stretch;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: stretch;
     list-style: none;
 }
-
+/*
 nav ul li {
-    margin-left: 20px;
-}
+   /* margin: 0 20px;
+}*/
 
 nav ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 20px;
+    white-space: nowrap; /* Evita que los textos se dividan en varias líneas */
+    text-align: center;
     color: white;
     text-decoration: none;
     font-weight: 600;
-    padding: 5px 10px;
-    border-radius: 4px;
     transition: background 0.3s;
+    border-radius: 5%;
 }
 
 nav ul li a:hover {
-    background: rgba(255,255,255,0.2);
+    /*background: rgba(255,255,255,0.2);*/
+    background: rgba(0,0,0,0.6);
+    color: rgb(255,255,0);
+    text-decoration:solid;
 }
 
 /* Sección Héroe */
@@ -128,12 +144,13 @@ nav ul li a:hover {
     text-decoration: none;
     border-radius: 30px;
     font-weight: bold;
-    transition: transform 0.3s, background 0.3s;
+    transition: transform 0.3s, background 0.3s, color 0.3s;
 }
 
 .btn:hover {
     background: var(--secundario);
-    transform: translateY(-3px);
+    color: yellow;
+    transform: scale(1.4, 1.4);
 }
 
 /* Sección de Servicios */
@@ -160,6 +177,42 @@ nav ul li a:hover {
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s;
+    height: 100%;
+}
+
+.card-link {
+    text-decoration: none; /* Quita el subrayado */
+    color: inherit; /* Mantiene el color del texto del elemento padre */
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.card-link-text {
+    text-decoration: none;
+    position: absolute;
+    bottom: 0;
+    margin-left: 1rem;
+}
+
+.card-link-text:hover {
+    font-weight: 600;
+}
+
+.card-link-text::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-link-text:hover::after {
+    transform: scaleX(1);
 }
 
 .service-card:hover {
@@ -197,9 +250,15 @@ nav ul li a:hover {
     margin-top: 0;
 }
 
+
 .emergency .btn {
     background: white;
     color: var(--secundario);
+}
+
+.emergency .btn:hover {
+    background: rgba(0,0,0,0.6);
+    color: yellow;
 }
 
 /* Sección de Doctores */
