@@ -21,7 +21,6 @@
         />
     </head>
     <body>
-        <script src="./script/accesible.js"></script>
         <!-- Header -->
         <header>
             <div class="container header-content">
@@ -46,6 +45,7 @@
                 </nav>
             </div>
         </header>
+
         <!-- Botón de accesibilidad -->
         <div class="accessibility-container">
             <button id="accessibility-btn">🧠</button>
@@ -226,35 +226,51 @@
             <div class="navbar-container2">
                 <div class="logo2">Accesibilidad</div>
 
-                <div class="container text-center">
-                    <!-- Dropup Button -->
-                    <div class="btn-group dropup">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            Show Menu
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><button class="dropdown-item" type="button">Action 1</button></li>
-                            <li><button class="dropdown-item" type="button">Action 2</button></li>
-                            <li><button class="dropdown-item" type="button">Action 3</button></li>
-                            <li><button class="dropdown-item" type="button">Action 4</button></li>
-                            <li><button class="dropdown-item" type="button">Action 5</button></li>
-                        </ul>
+                <div class="container">
+                    <div class="dropdown-container">
+                        <!-- First Dropup -->
+                        <div class="btn-group dropup">
+                            <button type="button" class="btn btn-primary dropdown-toggle dropdown-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                Menu 1
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><button class="dropdown-item" type="button">Action 1</button></li>
+                                <li><button class="dropdown-item" type="button">Action 2</button></li>
+                                <li><button class="dropdown-item" type="button">Action 3</button></li>
+                                <li><button class="dropdown-item" type="button">Action 4</button></li>
+                                <li><button class="dropdown-item" type="button">Action 5</button></li>
+                            </ul>
+                        </div>
+
+                        <!-- Second Dropup -->
+                        <div class="btn-group dropup">
+                            <button type="button" class="btn btn-success dropdown-toggle dropdown-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                Menu 2
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><button class="dropdown-item" type="button">Option A</button></li>
+                                <li><button class="dropdown-item" type="button">Option B</button></li>
+                                <li><button class="dropdown-item" type="button">Option C</button></li>
+                                <li><button class="dropdown-item" type="button">Option D</button></li>
+                                <li><button class="dropdown-item" type="button">Option E</button></li>
+                            </ul>
+                        </div>
+
+                        <!-- Third Dropup -->
+                        <div class="btn-group dropup">
+                            <button type="button" class="btn btn-danger dropdown-toggle dropdown-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                Menu 3
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><button class="dropdown-item" type="button">Choice 1</button></li>
+                                <li><button class="dropdown-item" type="button">Choice 2</button></li>
+                                <li><button class="dropdown-item" type="button">Choice 3</button></li>
+                                <li><button class="dropdown-item" type="button">Choice 4</button></li>
+                                <li><button class="dropdown-item" type="button">Choice 5</button></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-
-                <ul class="nav-menu2">
-                    <li>
-                        <a>Visual</a>
-                        <ul style="position: absolute; bottom: 100%; left: 0; transform: translateY(-10px);">
-                            <li><a href="Alto constraste"></a></li>
-                            <li><a href="Daltonico_1"></a></li>
-                            <li><a href="Daltonico_2"></a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="#">Nosotros</a></li>
-                    <li><a href="#">Contacto</a></li>
-                </ul>
             </div>
         </nav>
 
@@ -310,11 +326,12 @@
         <script>
             // Optional: Add click handlers for the dropdown items
             document.addEventListener('DOMContentLoaded', function() {
-                const dropdownItems = document.querySelectorAll('.dropdown-item');
-
-                dropdownItems.forEach((item, index) => {
+                // Add click handlers to all dropdown items
+                document.querySelectorAll('.dropdown-item').forEach(item => {
                     item.addEventListener('click', function() {
-                        alert(`Button ${index + 1} clicked!`);
+                        const menuText = this.closest('.btn-group').querySelector('.dropdown-toggle').textContent.trim();
+                        const itemText = this.textContent.trim();
+                        alert(`${menuText}: ${itemText} clicked!`);
                     });
                 });
             });

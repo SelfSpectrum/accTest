@@ -23,3 +23,18 @@
     font-size: 24px;
     font-weight: bold;
 }
+
+/* Custom styling for the dropdown to appear above the button */
+.dropup .dropdown-menu {
+    bottom: 100%;
+    margin-bottom: 0.125rem;
+}
+.dropdown-container {
+    display: flex;
+    gap: 20px; /* Space between dropdowns */
+    justify-content: center;
+    margin-top: 100px;
+}
+.dropdown-btn {
+    min-width: 120px; /* Consistent button width */
+}
