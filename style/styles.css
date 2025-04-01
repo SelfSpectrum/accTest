@@ -401,43 +401,6 @@ footer {
 */
 
 /* -----------------------------------------------------
-   MENÚ DE ACCESIBILIDAD
-   -----------------------------------------------------
-   Panel que contiene las diferentes opciones de accesibilidad.
-   Se muestra al hacer clic en el botón de accesibilidad.
-*/
-
-.accessibility-menu h3 {
-    margin: 0 0 10px;
-    font-size: 16px;
-    text-align: center;
-}
-
-.accessibility-menu button {
-    display: block;
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 5px;
-    border: none;
-    background: var(--acento);
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-/* -----------------------------------------------------
-   MENÚ DESPLEGABLE DE CONTRASTE
-   -----------------------------------------------------
-   Submenú que ofrece diferentes opciones de contraste
-   para usuarios con dificultades visuales.
-*/
-
-.contrast-submenu button:hover {
-    background-color: #f0f0f0; /* Fondo gris claro al pasar el cursor */
-}
-
-/* -----------------------------------------------------
    OPCIONES DE RESALTADO DE TEXTO
    -----------------------------------------------------
    Estilos que se aplican cuando se activa la opción
