@@ -401,47 +401,11 @@ footer {
 */
 
 /* -----------------------------------------------------
-   BOTÓN DE ACCESIBILIDAD
-   -----------------------------------------------------
-   Un botón fijo en la esquina inferior derecha que
-   permite acceder a las herramientas de accesibilidad.
-*/
-.accessibility-container {
-    position: fixed; /* El botón permanece fijo en la pantalla */
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
-}
-
-#accessibility-btn {
-    background: var(--primario);
-    color: white;
-    border: none;
-    padding: 15px;
-    font-size: 20px;
-    border-radius: 50%; /* Forma circular */
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar visualmente */
-    transition: transform 0.3s; /* Animación suave */
-}
-
-/* -----------------------------------------------------
    MENÚ DE ACCESIBILIDAD
    -----------------------------------------------------
    Panel que contiene las diferentes opciones de accesibilidad.
    Se muestra al hacer clic en el botón de accesibilidad.
 */
-.accessibility-menu {
-    display: none; /* Oculto por defecto, se muestra con JavaScript */
-    position: absolute;
-    bottom: 60px;
-    right: 0;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    padding: 10px;
-    width: 250px; /* Ancho suficiente para acomodar el submenú */
-}
 
 .accessibility-menu h3 {
     margin: 0 0 10px;
