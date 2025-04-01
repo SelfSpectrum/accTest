@@ -1,27 +1,43 @@
 <!doctype html>
 <html lang="en">
-<<<<<<< HEAD
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Hospital Regional de Copiapó</title>
-        <link rel="stylesheet" href="styles.css" />
-        <link rel="stylesheet" href="dark.css" />
         <link
             rel="icon"
             href="https://hospitalcopiapo.cl/wp-content/uploads/2024/04/cropped-LOGO-HRC-LETRAS-BLANCAS-236x191.png"
         />
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
-        />
+        <link rel="stylesheet" href="styles.css" />
+        <style>
+            .navbar-bottom {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background-color: #333;
+                color: #fff;
+                box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+                z-index: 1000;
+            }
+
+            .navbar-container2 {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 20px;
+                max-width: 1200px;
+                margin: 0 auto;
+                height: 60px;
+            }
+
+            .logo2 {
+                font-size: 24px;
+                font-weight: bold;
+            }
+        </style>
     </head>
     <body>
-        <script src="accesible.js"></script>
         <!-- Header -->
         <header>
             <div class="container header-content">
@@ -37,66 +53,30 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="#">Inicio</a></li>
-                        <li><a href="#">Servicios</a></li>
-                        <li><a href="#">Personal</a></li>
-                        <li><a href="#">Pide tu Cita</a></li>
-                        <li><a href="#">Contacto</a></li>
+                        <li><a tabindex="1" href="#">Inicio</a></li>
+                        <li><a tabindex="2" href="#">Servicios</a></li>
+                        <li><a tabindex="3" href="#">Personal</a></li>
+                        <li><a tabindex="4" href="#">Pide tu Cita</a></li>
+                        <li><a tabindex="5" href="#">Contacto</a></li>
                     </ul>
                 </nav>
+                <nav2>
+                    <ul></ul>
+                </nav2>
             </div>
         </header>
-        <!-- Botón de accesibilidad -->
-        <div class="accessibility-container">
-            <button id="accessibility-btn">🧠</button>
-            <div class="accessibility-menu">
-                <h3>Opciones de Accesibilidad</h3>
-                <div class="accessibility-option">
-                    <button id="contrast-toggle">
-                        Modo de Alto Contraste ▼
-                    </button>
-                    <div class="contrast-submenu">
-                        <button data-contrast="default">Normal</button>
-                        <button data-contrast="dark">
-                            Negro sobre Blanco (21:1)
-                        </button>
-                        <button data-contrast="yellow">
-                            Negro sobre Amarillo (12:1)
-                        </button>
-                        <button data-contrast="blue">
-                            Blanco sobre Azul (8:1)
-                        </button>
-                        <button data-contrast="green">
-                            Blanco sobre Verde (7:1)
-                        </button>
-                        <button data-contrast="red">
-                            Blanco sobre Rojo (7:1)
-                        </button>
-                    </div>
-                </div>
-                <button id="increase-font">Aumentar Texto</button>
-                <button id="decrease-font">Disminuir Texto</button>
-                <button id="highlighted-text">Resaltar texto</button>
-                <button id="focus-frame-toggle">Recuadro de Enfoque</button>
-                <button id="paragraph-highlight-toggle">
-                    Resaltar Párrafos
-                </button>
-            </div>
-        </div>
-
-        <!-- Enlace al script -->
-        <script src="accessibility.js"></script>
 
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content container">
-                <h2>Tu salud es nuestra prioridad</h2>
+                <h2 tabindex="6">Tu salud es nuestra prioridad</h2>
+                <!--prueba de "tabindex"-->
                 <p>
                     Brindamos servicios de atención médica excepcionales con
                     instalaciones de última generación y profesionales
                     compasivos dedicados a su bienestar.
                 </p>
-                <a href="#" class="btn">Pide una Cita</a>
+                <a tabindex="7" href="#" class="btn">Pide una Cita</a>
             </div>
         </section>
 
@@ -105,7 +85,7 @@
             <div class="container">
                 <h2 class="section-title">Nuestros Servicios</h2>
                 <div class="services-grid">
-                    <div class="service-card">
+                    <div tabindex="8" class="service-card">
                         <div class="service-img">🏥</div>
                         <div class="service-content">
                             <h3>Cuidados Intensivos</h3>
@@ -115,11 +95,11 @@
                                 centros de trauma completamente equipados,
                                 listos para manejar cualquier crisis médica.
                             </p>
-                            <a href="#">Aprende Más →</a>
+                            <a tabindex="9" href="#">Aprende Más →</a>
                         </div>
                     </div>
 
-                    <div class="service-card">
+                    <div tabindex="10" class="service-card">
                         <div class="service-img">💊</div>
                         <div class="service-content">
                             <h3>Farmacia</h3>
@@ -129,11 +109,11 @@
                                 farmacológicas por parte de farmacéuticos
                                 autorizados.
                             </p>
-                            <a href="#">Aprende Más →</a>
+                            <a tabindex="11" href="#">Aprende Más →</a>
                         </div>
                     </div>
 
-                    <div class="service-card">
+                    <div tabindex="12" class="service-card">
                         <div class="service-img">🩺</div>
                         <div class="service-content">
                             <h3>Cuidados Primarios</h3>
@@ -142,7 +122,7 @@
                                 incluyen atención preventiva, tratamiento de
                                 enfermedades crónicas y promoción de la salud.
                             </p>
-                            <a href="#">Aprende Más →</a>
+                            <a tabindex="13" href="#">Aprende Más →</a>
                         </div>
                     </div>
                 </div>
@@ -157,7 +137,9 @@
                     Si tiene una emergencia médica, llame inmediatamente o
                     visite nuestro departamento de emergencias.
                 </p>
-                <a href="tel:911" class="btn">Llamado de Emergencia: 911</a>
+                <a tabindex="14" href="tel:911" class="btn"
+                    >Llamado de Emergencia: 911</a
+                >
             </div>
         </section>
 
@@ -166,7 +148,7 @@
             <div class="container">
                 <h2 class="section-title">Meet Our Specialists</h2>
                 <div class="doctors-grid">
-                    <div class="doctor-card">
+                    <div tabindex="15" class="doctor-card">
                         <div class="doctor-img">👨‍⚕️</div>
                         <div class="doctor-info">
                             <h3>Dra. Sara Johnson</h3>
@@ -175,7 +157,7 @@
                         </div>
                     </div>
 
-                    <div class="doctor-card">
+                    <div tabindex="16" class="doctor-card">
                         <div class="doctor-img">👩‍⚕️</div>
                         <div class="doctor-info">
                             <h3>Dr. Michael Chen</h3>
@@ -184,7 +166,7 @@
                         </div>
                     </div>
 
-                    <div class="doctor-card">
+                    <div tabindex="17" class="doctor-card">
                         <div class="doctor-img">👨‍⚕️</div>
                         <div class="doctor-info">
                             <h3>Dra. Emilia Rodríguez</h3>
@@ -193,7 +175,7 @@
                         </div>
                     </div>
 
-                    <div class="doctor-card">
+                    <div tabindex="18" class="doctor-card">
                         <div class="doctor-img">👩‍⚕️</div>
                         <div class="doctor-info">
                             <h3>Dr. David Wilson</h3>
@@ -229,7 +211,9 @@
                         <h3 tabindex="19">Enlaces Rápidos</h3>
                         <ul>
                             <li><a tabindex="20" href="#">Inicio</a></li>
-                            <li><a tabindex="21" href="#">Más Información</a></li>
+                            <li>
+                                <a tabindex="21" href="#">Más Información</a>
+                            </li>
                             <li><a tabindex="22" href="#">Servicios</a></li>
                             <li><a tabindex="23" href="#">Personal</a></li>
                             <li><a tabindex="24" href="#">Contacto</a></li>
@@ -239,11 +223,19 @@
                     <div class="footer-column">
                         <h3 tabindex="25">Servicios</h3>
                         <ul>
-                            <li><a tabindex="26" href="#">Atención de emergencia</a></li>
-                            <li><a tabindex="27" href="#">Atención primaria</a></li>
+                            <li>
+                                <a tabindex="26" href="#"
+                                    >Atención de emergencia</a
+                                >
+                            </li>
+                            <li>
+                                <a tabindex="27" href="#">Atención primaria</a>
+                            </li>
                             <li><a tabindex="28" href="#">Cirugía</a></li>
                             <li><a tabindex="29" href="#">Diagnóstico</a></li>
-                            <li><a tabindex="30" href="#">Rehabilitación</a></li>
+                            <li>
+                                <a tabindex="30" href="#">Rehabilitación</a>
+                            </li>
                         </ul>
                     </div>
 
@@ -266,6 +258,30 @@
                         </ul>
                     </div>
                 </div>
+
+                <div class="copyright">
+                    <p>&copy; sos.</p>
+                </div>
+            </div>
         </footer>
+
+        <nav class="navbar-bottom">
+            <div class="navbar-container2">
+                <div class="logo2">Acecibilidad</div>
+                <ul class="nav-menu2">
+                    <li>
+                        <a>Visual</a>
+                        <ul style="transform: -10px; bottom: 100%">
+                            <li><a href="Alto constraste"></a></li>
+                            <li><a href="Daltonico_1"></a></li>
+                            <li><a href="Daltonico_2"></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
     </body>
 </html>
