@@ -225,6 +225,23 @@
         <nav class="navbar-bottom">
             <div class="navbar-container2">
                 <div class="logo2">Accesibilidad</div>
+
+                <div class="container text-center">
+                    <!-- Dropup Button -->
+                    <div class="btn-group dropup">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            Show Menu
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><button class="dropdown-item" type="button">Action 1</button></li>
+                            <li><button class="dropdown-item" type="button">Action 2</button></li>
+                            <li><button class="dropdown-item" type="button">Action 3</button></li>
+                            <li><button class="dropdown-item" type="button">Action 4</button></li>
+                            <li><button class="dropdown-item" type="button">Action 5</button></li>
+                        </ul>
+                    </div>
+                </div>
+
                 <ul class="nav-menu2">
                     <li>
                         <a>Visual</a>
@@ -287,5 +304,20 @@
                     </div>
                 </div>
         </footer>
+
+        <!-- Bootstrap JS and Popper.js -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            // Optional: Add click handlers for the dropdown items
+            document.addEventListener('DOMContentLoaded', function() {
+                const dropdownItems = document.querySelectorAll('.dropdown-item');
+
+                dropdownItems.forEach((item, index) => {
+                    item.addEventListener('click', function() {
+                        alert(`Button ${index + 1} clicked!`);
+                    });
+                });
+            });
+        </script>
     </body>
 </html>
