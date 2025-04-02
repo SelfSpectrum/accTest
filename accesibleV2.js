@@ -1,5 +1,3 @@
-// floating-buttons.js
-
 document.addEventListener('DOMContentLoaded', function() {
     // Crear el contenedor principal
     const container = document.createElement('div');

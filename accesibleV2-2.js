@@ -1,5 +1,3 @@
-// floating-buttons.js
-
 // IIFE para encapsular todo el código y evitar contaminación del espacio global
 (function() {
   // Configuración centralizada
