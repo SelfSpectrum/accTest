@@ -15,6 +15,8 @@
 
 // Variable global para el botón de recuadro de enfoque
 let focusFrameToggle;
+// Determina si se debe o no activar el modo escala de grises
+let isGrayscale = false;
 
 document.addEventListener("DOMContentLoaded", function () {
   /**
@@ -637,5 +639,23 @@ function toggleDarkMode() {
     newStylesheet.rel = "stylesheet";
     newStylesheet.href = "stylesDark.css";
     document.head.appendChild(newStylesheet);
+  }
+}
+
+function toggleGrayscale() {
+  isGrayscale = !isGrayscale;
+
+  if (isGrayscale) {
+    document.body.style.filter = "grayscale(100%)";
+    // Optional: Change button style when active
+    document
+      .getElementById("grayscaleToggle")
+      .classList.add("active-grayscale");
+  } else {
+    document.body.style.filter = "";
+    // Optional: Revert button style
+    document
+      .getElementById("grayscaleToggle")
+      .classList.remove("active-grayscale");
   }
 }
