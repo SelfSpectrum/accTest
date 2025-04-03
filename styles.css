@@ -87,13 +87,12 @@ nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: 600;
-    transition: background 0.3s;
+    transition: background 0.3s, color 0.3s;
     border-radius: 5%;
 }
 
 nav ul li a:hover {
-    /*background: rgba(255,255,255,0.2);*/
-    background: rgba(0,0,0,0.6);
+    background: rgba(255,255,255,0.2);
     color: rgb(255,255,0);
     text-decoration:solid;
 }
@@ -148,7 +147,6 @@ nav ul li a:hover {
 }
 
 .btn:hover {
-    background: var(--secundario);
     color: yellow;
     transform: scale(1.4, 1.4);
 }
@@ -250,15 +248,9 @@ nav ul li a:hover {
     margin-top: 0;
 }
 
-
 .emergency .btn {
     background: white;
     color: var(--secundario);
-}
-
-.emergency .btn:hover {
-    background: rgba(0,0,0,0.6);
-    color: yellow;
 }
 
 /* Sección de Doctores */
