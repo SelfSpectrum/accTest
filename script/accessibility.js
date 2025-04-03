@@ -609,7 +609,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function toggleDarkMode() {
-  // Find the current stylesheet link (if it exists)
+  // Encuentra la hoja de estilos utilizada, en caso de existir
   const currentStylesheet = Array.from(
     document.querySelectorAll('link[rel="stylesheet"]'),
   ).find((link) => {
