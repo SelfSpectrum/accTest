@@ -619,6 +619,8 @@ function toggleDarkMode() {
     );
   });
 
+  console.log(currentStylesheet);
+
   if (currentStylesheet) {
     // Toggle between light and dark stylesheets
     if (currentStylesheet.href.includes("styles.css")) {
