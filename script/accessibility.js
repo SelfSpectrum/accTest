@@ -606,14 +606,6 @@ document.addEventListener("DOMContentLoaded", function () {
       "Event listener del recuadro de enfoque actualizado correctamente",
     );
   }
-
-  /**
-   * Fin del código de accesibilidad.
-   *
-   * Este sistema proporciona herramientas importantes para usuarios
-   * con diversas necesidades, mejorando la accesibilidad general del sitio
-   * en cumplimiento con estándares internacionales como WCAG.
-   */
 });
 
 function toggleDarkMode() {
