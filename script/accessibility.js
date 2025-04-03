@@ -619,23 +619,20 @@ function toggleDarkMode() {
     );
   });
 
-  console.log(currentStylesheet);
-
   if (currentStylesheet) {
-    // Toggle between light and dark stylesheets
-    if (currentStylesheet.href.includes("styles.css")) {
+    // Intercambio las hojas de estilos reemplazando el nombre de las mismas
+    if (currentStylesheet.href.includes("styles.css"))
       currentStylesheet.href = currentStylesheet.href.replace(
         "styles.css",
         "stylesDark.css",
       );
-    } else {
+    else
       currentStylesheet.href = currentStylesheet.href.replace(
         "stylesDark.css",
         "styles.css",
       );
-    }
   } else {
-    // If no stylesheet found, create a dark mode stylesheet by default
+    // Si no hay hoja de estilos, creo una
     const newStylesheet = document.createElement("link");
     newStylesheet.rel = "stylesheet";
     newStylesheet.href = "stylesDark.css";
