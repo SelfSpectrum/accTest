@@ -644,19 +644,23 @@ function toggleDarkMode() {
 
 function toggleGrayscale() {
   isGrayscale = !isGrayscale;
+
+  // Create a style element once if it doesn't exist
+  let styleElement = document.getElementById("grayscale-style");
+  if (!styleElement) {
+    styleElement = document.createElement("style");
+    styleElement.id = "grayscale-style";
+    document.head.appendChild(styleElement);
+  }
+
+  // Toggle the stylesheet content
   if (isGrayscale) {
-    // Aplicar escala de grises a todo excepto al menú de accesibilidad
-    const allContent = document.querySelectorAll(
-      "body > *:not(.accessibility-menu)",
-    );
-    allContent.forEach((element) => {
-      element.style.filter = "grayscale(100%)";
-    });
+    styleElement.textContent = `
+      body > *:not(.accessibility-menu) {
+        filter: grayscale(100%) !important;
+      }
+    `;
   } else {
-    // Revertir filtro en todos los elementos
-    const allContent = document.querySelectorAll("body > *");
-    allContent.forEach((element) => {
-      element.style.filter = "";
-    });
+    styleElement.textContent = "";
   }
 }
