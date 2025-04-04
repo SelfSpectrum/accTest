@@ -644,6 +644,19 @@ function toggleDarkMode() {
 
 function toggleGrayscale() {
   isGrayscale = !isGrayscale;
-  if (isGrayscale) document.body.style.filter = "";
-  else document.body.style.filter = "grayscale(100%)";
+  if (isGrayscale) {
+    // Aplicar escala de grises a todo excepto al menú de accesibilidad
+    const allContent = document.querySelectorAll(
+      "body > *:not(.accessibility-menu)",
+    );
+    allContent.forEach((element) => {
+      element.style.filter = "grayscale(100%)";
+    });
+  } else {
+    // Revertir filtro en todos los elementos
+    const allContent = document.querySelectorAll("body > *");
+    allContent.forEach((element) => {
+      element.style.filter = "";
+    });
+  }
 }
