@@ -644,16 +644,34 @@ function toggleDarkMode() {
 
 function toggleGrayscale() {
   isGrayscale = !isGrayscale;
-
+  // Obtener referencia al menú de accesibilidad
+  const accessibilityMenu = document.querySelector(".accessibility-menu");
   if (isGrayscale) {
-    document.body.style.filter = "grayscale(100%)";
-    // Optional: Change button style when active
+    // Aplicar escala de grises a todo excepto al menú de accesibilidad
+    const allContent = document.querySelectorAll(
+      "body > *:not(.accessibility-menu)",
+    );
+    allContent.forEach((element) => {
+      element.style.filter = "grayscale(100%)";
+    });
+
+    // O alternativamente, usar una clase CSS
+    document.body.classList.add("grayscale-mode");
+
+    // Asegurar que el menú de accesibilidad no tenga el filtro
+    if (accessibilityMenu) {
+      accessibilityMenu.style.filter = "none";
+    }
     document
       .getElementById("grayscaleToggle")
       .classList.add("active-grayscale");
   } else {
-    document.body.style.filter = "";
-    // Optional: Revert button style
+    // Revertir filtro en todos los elementos
+    const allContent = document.querySelectorAll("body > *");
+    allContent.forEach((element) => {
+      element.style.filter = "";
+    });
+    document.body.classList.remove("grayscale-mode");
     document
       .getElementById("grayscaleToggle")
       .classList.remove("active-grayscale");
