@@ -36,11 +36,11 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="#">Inicio</a></li>
-                        <li><a href="#">Servicios</a></li>
-                        <li><a href="#">Personal</a></li>
-                        <li><a href="#">Pide tu Cita</a></li>
-                        <li><a href="#">Contacto</a></li>
+                        <li tabindex="4"><a href="#">Inicio</a></li>
+                        <li tabindex="5"><a href="#">Servicios</a></li>
+                        <li tabindex="6"><a href="#">Personal</a></li>
+                        <li tabindex="7"><a href="#">Pide tu Cita</a></li>
+                        <li tabindex="8"><a href="#">Contacto</a></li>
                     </ul>
                 </nav>
             </div>
@@ -55,7 +55,7 @@
                     instalaciones de última generación y profesionales
                     compasivos dedicados a su bienestar.
                 </p>
-                <a href="#" class="btn">Pide una Cita</a>
+                <a href="#" class="btn" tabindex="9">Pide una Cita</a>
             </div>
         </section>
 
@@ -74,7 +74,7 @@
                                 centros de trauma completamente equipados,
                                 listos para manejar cualquier crisis médica.
                             </p>
-                            <a href="#">Aprende Más →</a>
+                            <a href="#" tabindex="10">Aprende Más →</a>
                         </div>
                     </div>
 
@@ -88,7 +88,7 @@
                                 farmacológicas por parte de farmacéuticos
                                 autorizados.
                             </p>
-                            <a href="#">Aprende Más →</a>
+                            <a href="#" tabindex="11">Aprende Más →</a>
                         </div>
                     </div>
 
@@ -101,7 +101,7 @@
                                 incluyen atención preventiva, tratamiento de
                                 enfermedades crónicas y promoción de la salud.
                             </p>
-                            <a href="#">Aprende Más →</a>
+                            <a href="#" tabindex="12">Aprende Más →</a>
                         </div>
                     </div>
                 </div>
@@ -116,7 +116,7 @@
                     Si tiene una emergencia médica, llame inmediatamente o
                     visite nuestro departamento de emergencias.
                 </p>
-                <a href="tel:911" class="btn">Llamado de Emergencia: 911</a>
+                <a href="tel:911" class="btn" tabindex="13">Llamado de Emergencia: 911</a>
             </div>
         </section>
 
@@ -124,7 +124,7 @@
         <section class="doctors">
             <div class="container">
                 <h2 class="section-title">Meet Our Specialists</h2>
-                <div class="doctors-grid">
+                <div class="doctors-grid" tabindex="14">
                     <div class="doctor-card">
                         <div class="doctor-img">👨‍⚕️</div>
                         <div class="doctor-info">
@@ -189,22 +189,22 @@
                     <div class="dropdown-container accessibility-menu">
                         <!-- First Dropup -->
                         <div class="btn-group dropup">
-                            <button id="contrast-toggle" type="button" class="btn btn-primary dropdown-toggle dropdown-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button id="contrast-toggle" type="button" class="btn btn-primary dropdown-toggle dropdown-btn" data-bs-toggle="dropdown" aria-expanded="false" tabindex="1">
                                 Modo de Alto Contraste
                             </button>
                             <ul class="dropdown-menu contrast-submenu">
-                                <li><button data-contrast="red" class="dropdown-item" type="button">Blanco sobre Rojo (7:1)</button></li>
-                                <li><button data-contrast="green" class="dropdown-item" type="button">Blanco sobre Verde (7:1)</button></li>
-                                <li><button data-contrast="blue" class="dropdown-item" type="button">Blanco sobre Azul (8:1)</button></li>
-                                <li><button data-contrast="yellow" class="dropdown-item" type="button">Negro sobre Amarillo (12:1)</button></li>
-                                <li><button data-contrast="dark"class="dropdown-item" type="button">Negro sobre Blanco (21:1)</button></li>
-                                <li><button data-contrast="default" class="dropdown-item" type="button">Normal</button></li>
+                                <li><button data-contrast="red" class="dropdown-item" type="button" tabindex="-1">Blanco sobre Rojo (7:1)</button></li><!--el tablindex -1 sera oculto hasta-->
+                                <li><button data-contrast="green" class="dropdown-item" type="button" tabindex="-1">Blanco sobre Verde (7:1)</button></li>       <!--que se cambie el foco-->
+                                <li><button data-contrast="blue" class="dropdown-item" type="button" tabindex="-1">Blanco sobre Azul (8:1)</button></li>         <!--se esta por investicar como-->
+                                <li><button data-contrast="yellow" class="dropdown-item" type="button" tabindex="-1">Negro sobre Amarillo (12:1)</button></li>
+                                <li><button data-contrast="dark"class="dropdown-item" type="button" tabindex="-1">Negro sobre Blanco (21:1)</button></li>
+                                <li><button data-contrast="default" class="dropdown-item" type="button" tabindex="-1">Normal</button></li>
                             </ul>
                         </div>
 
                         <!-- Second Dropup -->
                         <div class="btn-group dropup">
-                            <button type="button" class="btn btn-success dropdown-toggle dropdown-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button type="button" class="btn btn-success dropdown-toggle dropdown-btn" data-bs-toggle="dropdown" aria-expanded="false" tabindex="2">
                                 Accesibilidad Visual
                             </button>
                             <ul class="dropdown-menu">
@@ -217,7 +217,7 @@
 
                         <!-- Third Dropup -->
                         <div class="btn-group dropup">
-                            <button type="button" class="btn btn-danger dropdown-toggle dropdown-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button type="button" class="btn btn-danger dropdown-toggle dropdown-btn" data-bs-toggle="dropdown" aria-expanded="false" tabindex="3">
                                 Accesibilidad Cognitiva
                             </button>
                             <ul class="dropdown-menu">
@@ -237,43 +237,43 @@
             <div class="container">
                 <div class="footer-grid">
                     <div class="footer-column">
-                        <h3 tabindex="19">Enlaces Rápidos</h3>
+                        <h3 tabindex="15">Enlaces Rápidos</h3>
                         <ul>
-                            <li><a tabindex="20" href="#">Inicio</a></li>
-                            <li><a tabindex="21" href="#">Más Información</a></li>
-                            <li><a tabindex="22" href="#">Servicios</a></li>
-                            <li><a tabindex="23" href="#">Personal</a></li>
-                            <li><a tabindex="24" href="#">Contacto</a></li>
+                            <li><a tabindex="16" href="#">Inicio</a></li>
+                            <li><a tabindex="17" href="#">Más Información</a></li>
+                            <li><a tabindex="18" href="#">Servicios</a></li>
+                            <li><a tabindex="19" href="#">Personal</a></li>
+                            <li><a tabindex="20" href="#">Contacto</a></li>
                         </ul>
                     </div>
 
                     <div class="footer-column">
-                        <h3 tabindex="25">Servicios</h3>
+                        <h3 tabindex="21">Servicios</h3>
                         <ul>
-                            <li><a tabindex="26" href="#">Atención de emergencia</a></li>
-                            <li><a tabindex="27" href="#">Atención primaria</a></li>
-                            <li><a tabindex="28" href="#">Cirugía</a></li>
-                            <li><a tabindex="29" href="#">Diagnóstico</a></li>
-                            <li><a tabindex="30" href="#">Rehabilitación</a></li>
+                            <li><a tabindex="22" href="#">Atención de emergencia</a></li>
+                            <li><a tabindex="23" href="#">Atención primaria</a></li>
+                            <li><a tabindex="24" href="#">Cirugía</a></li>
+                            <li><a tabindex="25" href="#">Diagnóstico</a></li>
+                            <li><a tabindex="26" href="#">Rehabilitación</a></li>
                         </ul>
                     </div>
 
                     <div class="footer-column">
-                        <h3 tabindex="31">Contactáctanos</h3>
+                        <h3 tabindex="27">Contactáctanos</h3>
                         <ul>
                             <li>Lorem Ipsum</li>
                             <li>LOL, LMAO</li>
-                            <li tabindex="32">Teléfono: +569 1234 5678</li>
-                            <li tabindex="33">Email: nosejajasalu2</li>
+                            <li tabindex="28">Teléfono: +569 1234 5678</li>
+                            <li tabindex="29">Email: nosejajasalu2</li>
                         </ul>
                     </div>
 
                     <div class="footer-column">
-                        <h3 tabindex="34">Horarios</h3>
+                        <h3 tabindex="30">Horarios</h3>
                         <ul>
-                            <li tabindex="35">Emergencias: 24/7</li>
-                            <li tabindex="36">Farmacia: 7am-10pm</li>
-                            <li tabindex="37">Fin de Semana: 9am-5pm</li>
+                            <li tabindex="31">Emergencias: 24/7</li>
+                            <li tabindex="32">Farmacia: 7am-10pm</li>
+                            <li tabindex="33">Fin de Semana: 9am-5pm</li>
                         </ul>
                     </div>
                 </div>
