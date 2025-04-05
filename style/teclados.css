@@ -1,0 +1,18 @@
+/*Teclados*/
+
+.elemento-enfocable {
+    border-radius: 5px;
+}
+
+.elemento-enfocable:focus {
+    background-color: #f5f9ff;
+}
+
+#arriba {
+    bottom: 100%;
+    margin-bottom: 0.125rem;
+}
+
+#arriba:hover {
+    background-color: #357abD;
+}

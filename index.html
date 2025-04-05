@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="./style/styles.css" />
         <link rel="stylesheet" href="./style/dark.css" />
         <link rel="stylesheet" href="./style/accessibility.css" />
+        <link rel="stylesheet" href="./style/teclados.css" />
         <link
             rel="icon"
             href="https://hospitalcopiapo.cl/wp-content/uploads/2024/04/cropped-LOGO-HRC-LETRAS-BLANCAS-236x191.png"
@@ -36,11 +37,11 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="#">Inicio</a></li>
-                        <li><a href="#">Servicios</a></li>
-                        <li><a href="#">Personal</a></li>
-                        <li><a href="#">Pide tu Cita</a></li>
-                        <li><a href="#">Contacto</a></li>
+                        <li><a class="elemento-enfocable" tabindex="5" href="#">Inicio</a></li>
+                        <li><a class="elemento-enfocable" tabindex="6" href="#">Servicios</a></li>
+                        <li><a class="elemento-enfocable" tabindex="7" href="#">Personal</a></li>
+                        <li><a class="elemento-enfocable" tabindex="8" href="#">Pide tu Cita</a></li>
+                        <li><a class="elemento-enfocable" tabindex="9" href="#">Contacto</a></li>
                     </ul>
                 </nav>
             </div>
@@ -55,7 +56,7 @@
                     instalaciones de última generación y profesionales
                     compasivos dedicados a su bienestar.
                 </p>
-                <a href="#" class="btn">Pide una Cita</a>
+                <a href="#" class="btn elemento-enfocable" tabindex="10">Pide una Cita</a>
             </div>
         </section>
 
@@ -74,7 +75,7 @@
                                 centros de trauma completamente equipados,
                                 listos para manejar cualquier crisis médica.
                             </p>
-                            <a href="#">Aprende Más →</a>
+                            <a class="elemento-enfocable" tabindex="11" href="#">Aprende Más →</a>
                         </div>
                     </div>
 
@@ -88,7 +89,7 @@
                                 farmacológicas por parte de farmacéuticos
                                 autorizados.
                             </p>
-                            <a href="#">Aprende Más →</a>
+                            <a class="elemento-enfocable" tabindex="12" href="#">Aprende Más →</a>
                         </div>
                     </div>
 
@@ -101,7 +102,7 @@
                                 incluyen atención preventiva, tratamiento de
                                 enfermedades crónicas y promoción de la salud.
                             </p>
-                            <a href="#">Aprende Más →</a>
+                            <a class="elemento-enfocable" tabindex="13" href="#">Aprende Más →</a>
                         </div>
                     </div>
                 </div>
@@ -116,7 +117,7 @@
                     Si tiene una emergencia médica, llame inmediatamente o
                     visite nuestro departamento de emergencias.
                 </p>
-                <a href="tel:911" class="btn">Llamado de Emergencia: 911</a>
+                <a href="tel:911" class="btn elemento-enfocable" tabindex="14">Llamado de Emergencia: 911</a>
             </div>
         </section>
 
@@ -124,7 +125,7 @@
         <section class="doctors">
             <div class="container">
                 <h2 class="section-title">Meet Our Specialists</h2>
-                <div class="doctors-grid">
+                <div class="doctors-grid elemento-enfocable" tabindex="15">
                     <div class="doctor-card">
                         <div class="doctor-img">👨‍⚕️</div>
                         <div class="doctor-info">
@@ -187,9 +188,23 @@
 
                 <div class="container accessibility-container">
                     <div class="dropdown-container accessibility-menu">
+                       
+                        <!-- teclado rapido -->
+                        <div class="btn-group dropup">
+                            <button type="button" class="btn btn-teclado dropdown-toggle dropdown-btn elemento-enfocable" tabindex="1" data-bs-toggle="dropdown" aria-expanded="false">
+                                Teclado rapido
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><button class="dropdown-item" type="button" id="arriba" onclick="irSiguiente()">up</button></li>
+                                <li><button class="dropdown-item" type="button" id="abajo">dow</button></li>
+                                <li><button class="dropdown-item" type="button" id="sig_btn">siguiente</button></li>
+                                <li><button class="dropdown-item" type="button" id="ant_btn">anterior</button></li>
+                            </ul>
+                        </div>
+
                         <!-- First Dropup -->
                         <div class="btn-group dropup">
-                            <button id="contrast-toggle" type="button" class="btn btn-primary dropdown-toggle dropdown-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button id="contrast-toggle" type="button" class="btn btn-primary dropdown-toggle dropdown-btn elemento-enfocable" tabindex="2" data-bs-toggle="dropdown" aria-expanded="false">
                                 Modo de Alto Contraste
                             </button>
                             <ul class="dropdown-menu contrast-submenu">
@@ -204,7 +219,7 @@
 
                         <!-- Second Dropup -->
                         <div class="btn-group dropup">
-                            <button type="button" class="btn btn-success dropdown-toggle dropdown-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button type="button" class="btn btn-success dropdown-toggle dropdown-btn elemento-enfocable" tabindex="3" data-bs-toggle="dropdown" aria-expanded="false">
                                 Accesibilidad Visual
                             </button>
                             <ul class="dropdown-menu">
@@ -217,7 +232,7 @@
 
                         <!-- Third Dropup -->
                         <div class="btn-group dropup">
-                            <button type="button" class="btn btn-danger dropdown-toggle dropdown-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button type="button" class="btn btn-danger dropdown-toggle dropdown-btn elemento-enfocable" tabindex="4" data-bs-toggle="dropdown" aria-expanded="false">
                                 Accesibilidad Cognitiva
                             </button>
                             <ul class="dropdown-menu">
@@ -237,43 +252,43 @@
             <div class="container">
                 <div class="footer-grid">
                     <div class="footer-column">
-                        <h3 tabindex="19">Enlaces Rápidos</h3>
+                        <h3 class="elemento-enfocable" tabindex="15">Enlaces Rápidos</h3>
                         <ul>
-                            <li><a tabindex="20" href="#">Inicio</a></li>
-                            <li><a tabindex="21" href="#">Más Información</a></li>
-                            <li><a tabindex="22" href="#">Servicios</a></li>
-                            <li><a tabindex="23" href="#">Personal</a></li>
-                            <li><a tabindex="24" href="#">Contacto</a></li>
+                            <li><a class="elemento-enfocable" tabindex="16" href="#">Inicio</a></li>
+                            <li><a class="elemento-enfocable" tabindex="17" href="#">Más Información</a></li>
+                            <li><a class="elemento-enfocable" tabindex="18" href="#">Servicios</a></li>
+                            <li><a class="elemento-enfocable" tabindex="19" href="#">Personal</a></li>
+                            <li><a class="elemento-enfocable" tabindex="20" href="#">Contacto</a></li>
                         </ul>
                     </div>
 
                     <div class="footer-column">
-                        <h3 tabindex="25">Servicios</h3>
+                        <h3 class="elemento-enfocable" tabindex="21">Servicios</h3>
                         <ul>
-                            <li><a tabindex="26" href="#">Atención de emergencia</a></li>
-                            <li><a tabindex="27" href="#">Atención primaria</a></li>
-                            <li><a tabindex="28" href="#">Cirugía</a></li>
-                            <li><a tabindex="29" href="#">Diagnóstico</a></li>
-                            <li><a tabindex="30" href="#">Rehabilitación</a></li>
+                            <li><a class="elemento-enfocable" tabindex="22" href="#">Atención de emergencia</a></li>
+                            <li><a class="elemento-enfocable" tabindex="23" href="#">Atención primaria</a></li>
+                            <li><a class="elemento-enfocable" tabindex="24" href="#">Cirugía</a></li>
+                            <li><a class="elemento-enfocable" tabindex="25" href="#">Diagnóstico</a></li>
+                            <li><a class="elemento-enfocable" tabindex="26" href="#">Rehabilitación</a></li>
                         </ul>
                     </div>
 
                     <div class="footer-column">
-                        <h3 tabindex="31">Contactáctanos</h3>
+                        <h3 class="elemento-enfocable" tabindex="27">Contactáctanos</h3>
                         <ul>
                             <li>Lorem Ipsum</li>
                             <li>LOL, LMAO</li>
-                            <li tabindex="32">Teléfono: +569 1234 5678</li>
-                            <li tabindex="33">Email: nosejajasalu2</li>
+                            <li class="elemento-enfocable" tabindex="28">Teléfono: +569 1234 5678</li>
+                            <li class="elemento-enfocable" tabindex="29">Email: nosejajasalu2</li>
                         </ul>
                     </div>
 
                     <div class="footer-column">
-                        <h3 tabindex="34">Horarios</h3>
+                        <h3 class="elemento-enfocable" tabindex="30">Horarios</h3>
                         <ul>
-                            <li tabindex="35">Emergencias: 24/7</li>
-                            <li tabindex="36">Farmacia: 7am-10pm</li>
-                            <li tabindex="37">Fin de Semana: 9am-5pm</li>
+                            <li class="elemento-enfocable" tabindex="31">Emergencias: 24/7</li>
+                            <li class="elemento-enfocable" tabindex="32">Farmacia: 7am-10pm</li>
+                            <li class="elemento-enfocable" tabindex="33">Fin de Semana: 9am-5pm</li>
                         </ul>
                     </div>
                 </div>
@@ -281,6 +296,7 @@
 
         <!-- Bootstrap JS and Popper.js -->
         <script src="./script/accessibility.js"></script>
+        <script src="./script/teclado.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
