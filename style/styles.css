@@ -5,12 +5,12 @@
    Esto centraliza la gestión de colores y facilita cambios futuros.
 */
 :root {
-    --primario: #009830; /* Verde principal - Color institucional */
-    --secundario: #c83600; /* Naranja - Color complementario para acentos */
-    --acento: #054f26; /* Verde oscuro - Para botones y elementos interactivos */
-    --claro: #ecf0f1; /* Gris muy claro - Para fondos de secciones */
-    --oscuro: #2c3e50; /* Azul muy oscuro - Para textos y pie de página */
-    --exito: #27ae60; /* Verde claro - Para mensajes de éxito */
+    --primario: #009830;        /* Verde principal - Color institucional */
+    --secundario: #c83600;      /* Naranja - Color complementario para acentos */
+    --acento: #054f26;          /* Verde oscuro - Para botones y elementos interactivos */
+    --claro: #ecf0f1;           /* Gris muy claro - Para fondos de secciones */
+    --oscuro: #2c3e50;          /* Azul muy oscuro - Para textos y pie de página */
+    --exito: #27ae60;           /* Verde claro - Para mensajes de éxito */
 }
 
 /* =====================================================
@@ -21,7 +21,7 @@
 */
 body {
     font-family: "Arial", sans-serif;
-    line-height: 1.6; /* Mejora la legibilidad del texto */
+    line-height: 1.6;               /* Mejora la legibilidad del texto */
     margin: 0;
     padding: 0;
     color: var(--oscuro);
@@ -29,9 +29,9 @@ body {
 }
 
 .container {
-    width: 90%; /* Ocupa el 90% del ancho disponible */
-    max-width: 1200px; /* Limita el ancho máximo en pantallas grandes */
-    margin: 0 auto; /* Centra el contenido horizontalmente */
+    width: 90%;                     /* Ocupa el 90% del ancho disponible */
+    max-width: 1200px;              /* Limita el ancho máximo en pantallas grandes */
+    margin: 0 auto;                 /* Centra el contenido horizontalmente */
 }
 
 /* =====================================================
@@ -79,8 +79,8 @@ header {
    NAVEGACIÓN
    ===================================================== */
 nav ul {
-    display: flex; /* Organiza los elementos en horizontal */
-    list-style: none; /* Elimina los puntos de lista */
+    display: flex;          /* Organiza los elementos en horizontal */
+    list-style: none;       /* Elimina los puntos de lista */
 }
 
 nav ul li {
@@ -111,16 +111,16 @@ nav ul li a:hover {
 .hero {
     background: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.nostalgica.cl%2Fwp-content%2Fuploads%2F2020%2F08%2Ffoto.jpg&f=1&nofb=1&ipt=1886769c57321d047716c4fd8f57dc0baa19684c6be4fd0d39011a0e1b6198e3&ipo=images")
         no-repeat center center/cover;
-    height: 500px;
-    display: flex;
-    align-items: center; /* Centra verticalmente el contenido */
+    height: 500px;          /* altura fija de la sección */
+    display: flex;          
+    align-items: center;    /* Centra verticalmente el contenido */
     color: white;
     text-align: center;
-    position: relative; /* Permite posicionar el pseudo-elemento ::before */
+    position: relative;     /* Permite posicionar el pseudo-elemento ::before */
 }
 
 .hero::before {
-    content: ""; /* Necesario para que el pseudo-elemento sea visible */
+    content: "";            /* Necesario para que el pseudo-elemento sea visible */
     position: absolute;
     top: 0;
     left: 0;
@@ -135,8 +135,8 @@ nav ul li a:hover {
 }
 
 .hero-content {
-    position: relative; /* Lo coloca por encima del overlay oscuro */
-    z-index: 1; /* Asegura que esté por encima del pseudo-elemento */
+    position: relative;     /* Lo coloca por encima del overlay oscuro */
+    z-index: 1;             /* Asegura que esté por encima del pseudo-elemento */
     width: 100%;
 }
 
@@ -147,8 +147,8 @@ nav ul li a:hover {
 
 .hero p {
     font-size: 1.2rem;
-    max-width: 700px; /* Limita ancho para mejorar legibilidad */
-    margin: 0 auto 30px; /* Centra el párrafo horizontalmente */
+    max-width: 700px;       /* Limita ancho para mejorar legibilidad */
+    margin: 0 auto 30px;    /* Centra el párrafo horizontalmente */
 }
 
 .btn {
@@ -157,16 +157,16 @@ nav ul li a:hover {
     background: var(--acento);
     color: white;
     text-decoration: none;
-    border-radius: 30px; /* Botón muy redondeado - estilo pill */
+    border-radius: 30px;    /* Botón muy redondeado - estilo pill */
     font-weight: bold;
     transition:
         transform 0.3s,
-        background 0.3s; /* Animaciones al hacer hover */
+        background 0.3s;    /* Animaciones al hacer hover */
 }
 
 .btn:hover {
-    background: var(--secundario); /* Cambia de color al pasar el cursor */
-    transform: translateY(-3px); /* Efecto de elevación */
+    background: var(--secundario);  /* Cambia de color al pasar el cursor */
+    transform: translateY(-3px);    /* Efecto de elevación */
 }
 
 /* =====================================================

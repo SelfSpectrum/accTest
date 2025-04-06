@@ -1,45 +1,50 @@
+/* Este es el estilo de la barra de navegación inferior */
 .navbar-bottom {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #333;
-    color: #fff;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
+    position: fixed;                            /* Siempre visible, fijada en pantalla */
+    bottom: 0;                                  /* Pegada al borde inferior */
+    left: 0;                                    /* Alineada a la izquierda */
+    width: 100%;                                /* Ocupa todo el ancho */
+    background-color: #333;                   /* Color de fondo oscuro */
+    color: #fff;                              /* Texto blanco */  
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);/* Sombra en la parte superior */
+    z-index: 1000;                              /* Se asegura de estar encima de otros elementos */
 }
 
-.navbar-container2 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    height: 64px;
+/* Es el contenedor interno de la barra de navegación */
+.navbar-container2 {                            
+    display: flex;                              /* Usa Flexbox para organizar contenido */
+    justify-content: space-between;             /* Espacio entre los elementos hijos */
+    align-items: center;                        /* Centra verticalmente */
+    padding: 0 20px;                            /* Espaciado horizontal interno */
+    max-width: 1200px;                          /* Máximo ancho (para que no se expanda demasiado en pantallas grandes) */
+    margin: 0 auto;                             /* Centrado horizontal en la pantalla */
+    height: 64px;                               /* Altura de la barra */
 }
 
-.logo2 {
-    font-size: 24px;
-    font-weight: bold;
+.logo2 {    
+    font-size: 24px;                            /* Tamaño grande de fuente */
+    font-weight: bold;                          /* Texto en negrita */
 }
  
-/* Custom styling for the dropdown to appear above the button */
+/* Estilo personalizado para que el menú desplegable aparezca encima del botón */
 .dropup .dropdown-menu {
     bottom: 100%;
     margin-bottom: 0.125rem;
 }
+
+/* Contenedor que organiza varios botones de dropdown */
 .dropdown-container {
-    display: flex;
-    gap: 20px; /* Space between dropdowns */
-    justify-content: center;
+    display: flex;                              /* Flexbox para alinear los dropdowns */
+    gap: 20px;                                  /* Espacio entre menús desplegables */
+    justify-content: center;                    /* Centra todo el grupo horizontalmente */
 }
+
 .dropdown-btn {
-    min-width: 120px; /* Consistent button width */
+    min-width: 120px;                           /* Ancho de botón consistente */
 }
 
 .active-grayscale {
-    background-color: #f0f0f0 !important;
-    color: #333 !important;
-    border-color: #ddd !important;
-}
+    background-color:crimson !important;       /* Fondo gris claro */
+    color:blueviolet !important;               /* Texto oscuro */
+    border-color:yellow !important;            /* Borde gris claro */
+}   

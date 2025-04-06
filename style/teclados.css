@@ -1,5 +1,8 @@
 /*Teclados*/
-
+.btn-teclado{
+    background-color: aqua;
+    color:blue;
+}
 .elemento-enfocable {
     border-radius: 5px;
 }

@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const container = document.createElement("div");
   container.className = "floating-menu-container";
   container.style.cssText = `
-    position: fixed;
+    position: fixed; 
     bottom: 20px;
     right: 20px;
     display: flex;
