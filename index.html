@@ -195,9 +195,13 @@
                                 Teclado rapido
                             </button>
                             <ul class="dropdown-menu">
-                                <li><button class="dropdown-item" type="button" id="arriba" onclick="irSiguiente()">up</button></li>
+                                <!--Suvir en la pagina-->
+                                <li><button class="dropdown-item" type="button" id="arriba">up</button></li>
+                                <!--Baja en la paguibna-->
                                 <li><button class="dropdown-item" type="button" id="abajo">dow</button></li>
-                                <li><button class="dropdown-item" type="button" id="sig_btn">siguiente</button></li>
+                                <!--pasar al siguiente tabindex-->
+                                <li><button class="dropdown-item" type="button" id="sig_btn" onclick="irSiguiente()">siguiente</button></li>
+                                <!--pasar al anterior tabindex-->
                                 <li><button class="dropdown-item" type="button" id="ant_btn">anterior</button></li>
                             </ul>
                         </div>
