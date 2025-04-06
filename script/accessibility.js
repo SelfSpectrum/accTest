@@ -125,10 +125,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Actualizar texto del botón para mostrar la opción seleccionada
       if (selectedContrast === "default") {
-        contrastToggle.textContent = "Modo de Alto Contraste ▼";
+        contrastToggle.textContent = "Modo de Alto Contraste";
       } else {
         contrastToggle.textContent =
-          "Contraste: " + this.textContent.split(" (")[0] + " ▼";
+          "Contraste: " + this.textContent.split(" (")[0];
       }
 
       // Actualizar otras funcionalidades activas para mantener compatibilidad
