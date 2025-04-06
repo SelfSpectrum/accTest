@@ -208,8 +208,6 @@
                                 Accesibilidad Visual
                             </button>
                             <ul class="dropdown-menu">
-                                <li><button class="dropdown-item" type="button" id="increase-font">Aumentar Texto</button></li>
-                                <li><button class="dropdown-item" type="button" id="decrease-font">Disminuir Texto</button></li>
                                 <li><button class="dropdown-item" type="button" onclick="toggleDarkMode()">Modo oscuro</button></li>
                                 <li><button class="dropdown-item" type="button" onclick="toggleGrayscale()">Escala de grises</button></li>
                             </ul>
@@ -221,10 +219,12 @@
                                 Accesibilidad Cognitiva
                             </button>
                             <ul class="dropdown-menu">
-                                <li><button class="dropdown-item" type="button" id="highlighted-text">Resaltar texto</button></li>
+                                <li><button id="increase-font">Aumentar texto</button></li>
+                                <li><button id="decrease-font">Disminuir texto</button></li>
+                                <li><button id="highlighted-text">Resaltar texto</button></li>
+                                <li><button id="paragraph-highlight-toggle">Resaltar párrafos</button></li>
                                 <li><button class="dropdown-item" type="button" id="focus-frame-toggle">Recuadro de Enfoque</button></li>
-                                <li><button class="dropdown-item" type="button" id="paragraph-highlight-toggle">
-                                                   Resaltar Párrafos</button></li>
+
                             </ul>
                         </div>
                     </div>
@@ -282,5 +282,18 @@
         <!-- Bootstrap JS and Popper.js -->
         <script src="./script/accessibility.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script type="module">
+            import {
+              setupFontResizer,
+              setupTextHighlighter,
+              setupParagraphHighlighter
+            } from './accessibility-funciones-modulares.js';
+          
+            document.addEventListener("DOMContentLoaded", () => {
+              setupFontResizer();
+              setupTextHighlighter();
+              setupParagraphHighlighter();
+            });
+          </script>
     </body>
 </html>
