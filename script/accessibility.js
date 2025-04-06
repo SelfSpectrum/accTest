@@ -13,17 +13,10 @@
  * o en combinación, adaptándose a las necesidades específicas de cada usuario.
  */
 
-/**
- * VARIABLES DE ESTADO
- * =================
- * Variables que guardan el estado actual de cada funcionalidad
- */
-let fontSize = 16; // Tamaño de fuente base en píxeles
-let highlightActive = false; // Estado del resaltado de texto
-let paragraphHighlightActive = false; // Estado del resaltado de párrafos
-let currentContrast = "default"; // Modo de contraste actual
-let focusFrameToggle; // Variable global para el botón de recuadro de enfoque
-let isGrayscale = false; // Determina si se debe o no activar el modo escala de grises
+// Variable global para el botón de recuadro de enfoque
+let focusFrameToggle;
+// Determina si se debe o no activar el modo escala de grises
+let isGrayscale = false;
 
 document.addEventListener("DOMContentLoaded", function () {
   /**
@@ -51,6 +44,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const paragraphHighlightToggle = document.getElementById(
     "paragraph-highlight-toggle",
   );
+
+  /**
+   * VARIABLES DE ESTADO
+   * =================
+   * Variables que guardan el estado actual de cada funcionalidad
+   */
+  let fontSize = 16; // Tamaño de fuente base en píxeles
+  let highlightActive = false; // Estado del resaltado de texto
+  let paragraphHighlightActive = false; // Estado del resaltado de párrafos
+  let currentContrast = "default"; // Modo de contraste actual
 
   /**
    * MODOS DE ALTO CONTRASTE
@@ -125,10 +128,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Actualizar texto del botón para mostrar la opción seleccionada
       if (selectedContrast === "default") {
-        contrastToggle.textContent = "Modo de Alto Contraste";
+        contrastToggle.textContent = "Modo de Alto Contraste ▼";
       } else {
         contrastToggle.textContent =
-          "Contraste: " + this.textContent.split(" (")[0];
+          "Contraste: " + this.textContent.split(" (")[0] + " ▼";
       }
 
       // Actualizar otras funcionalidades activas para mantener compatibilidad
@@ -642,7 +645,7 @@ function toggleDarkMode() {
 function toggleGrayscale() {
   isGrayscale = !isGrayscale;
 
-  // Crea un elemento para estilos siempre y cuando no exista de base
+  // Create a style element once if it doesn't exist
   let styleElement = document.getElementById("grayscale-style");
   if (!styleElement) {
     styleElement = document.createElement("style");
@@ -650,12 +653,14 @@ function toggleGrayscale() {
     document.head.appendChild(styleElement);
   }
 
-  // Modifica los elementos de estilos
+  // Toggle the stylesheet content
   if (isGrayscale) {
     styleElement.textContent = `
       body > *:not(.accessibility-menu) {
         filter: grayscale(100%) !important;
       }
     `;
-  } else styleElement.textContent = "";
+  } else {
+    styleElement.textContent = "";
+  }
 }

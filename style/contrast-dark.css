@@ -1,0 +1,496 @@
+/* =====================================================
+   PALETA DE COLORES PARA ALTO CONTRASTE - NEGRO SOBRE BLANCO (21:1)
+   =====================================================
+*/
+:root {
+    --primario: #FFFFFF; /* Blanco puro - Fondo general */
+    --secundario: #F8F8F8; /* Blanco ligeramente grisáceo - Variaciones */
+    --acento: #F0F0F0; /* Gris muy claro - Para elementos interactivos */
+    --claro: #000000; /* Negro puro - Para texto y bordes */
+    --oscuro: #000000; /* Negro - Para contrastes adicionales */
+    --exito: #000000; /* Negro - Para mensajes y resaltados */
+}
+
+/* =====================================================
+   ESTILOS BASE
+   ===================================================== */
+body {
+    font-family: "Arial", sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: var(--claro);
+    background-color: var(--primario);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =====================================================
+   ENCABEZADO (HEADER)
+   ===================================================== */
+header {
+    background: var(--secundario);
+    color: var(--claro);
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid var(--claro);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+    margin-right: 15px;
+    filter: brightness(0); /* Convierte la imagen a negro */
+}
+
+.logo-text h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.logo-text p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* =====================================================
+   NAVEGACIÓN
+   ===================================================== */
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: var(--claro);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background 0.3s;
+    border: 1px solid transparent;
+}
+
+nav ul li a:hover {
+    background: var(--acento);
+    border: 1px solid var(--claro);
+}
+
+/* =====================================================
+   SECCIÓN HÉROE
+   ===================================================== */
+.hero {
+    background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.nostalgica.cl%2Fwp-content%2Fuploads%2F2020%2F08%2Ffoto.jpg&f=1&nofb=1&ipt=1886769c57321d047716c4fd8f57dc0baa19684c6be4fd0d39011a0e1b6198e3&ipo=images') no-repeat center center/cover;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    color: var(--primario);
+    text-align: center;
+    position: relative;
+    border-bottom: 2px solid var(--claro);
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Sutil oscurecimiento */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: var(--claro);
+    color: var(--primario);
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: transform 0.3s, background 0.3s;
+    border: 2px solid var(--claro);
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--claro);
+    transform: translateY(-3px);
+}
+
+/* =====================================================
+   SECCIÓN DE SERVICIOS
+   ===================================================== */
+.services {
+    padding: 60px 0;
+    background: var(--primario);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--claro);
+    border-bottom: 2px solid var(--claro);
+    padding-bottom: 10px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: var(--secundario);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    border: 2px solid var(--claro);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-img {
+    height: 200px;
+    background: var(--acento);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--claro);
+    font-size: 4rem;
+    border-bottom: 1px solid var(--claro);
+}
+
+.service-content {
+    padding: 20px;
+}
+
+.service-content h3 {
+    color: var(--claro);
+    margin-top: 0;
+    border-bottom: 1px solid var(--claro);
+    padding-bottom: 5px;
+}
+
+.service-content p {
+    color: var(--claro);
+}
+
+.service-content a {
+    color: var(--claro);
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* =====================================================
+   SECCIÓN DE EMERGENCIAS
+   ===================================================== */
+.emergency {
+    background: var(--acento);
+    color: var(--claro);
+    padding: 40px 0;
+    text-align: center;
+    border-top: 2px solid var(--claro);
+    border-bottom: 2px solid var(--claro);
+}
+
+.emergency h2 {
+    margin-top: 0;
+}
+
+.emergency .btn {
+    background: var(--claro);
+    color: var(--acento);
+}
+
+.emergency .btn:hover {
+    background: var(--acento);
+    color: var(--claro);
+}
+
+/* =====================================================
+   SECCIÓN DE DOCTORES
+   ===================================================== */
+.doctors {
+    padding: 60px 0;
+    background: var(--primario);
+}
+
+.doctors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.doctor-card {
+    background: var(--secundario);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 2px solid var(--claro);
+}
+
+.doctor-img {
+    height: 250px;
+    background: var(--acento);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--claro);
+    font-size: 5rem;
+    border-bottom: 1px solid var(--claro);
+}
+
+.doctor-info {
+    padding: 20px;
+}
+
+.doctor-info h3 {
+    margin-bottom: 5px;
+    color: var(--claro);
+    border-bottom: 1px solid var(--claro);
+    padding-bottom: 5px;
+}
+
+.doctor-info p {
+    color: var(--claro);
+    margin-top: 0;
+}
+
+/* =====================================================
+   TESTIMONIOS
+   ===================================================== */
+.testimonials {
+    padding: 60px 0;
+    background: var(--primario);
+}
+
+.testimonial-card {
+    background: var(--secundario);
+    padding: 30px;
+    border-radius: 8px;
+    margin: 0 auto;
+    max-width: 800px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--claro);
+}
+
+.testimonial-card p {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--claro);
+}
+
+.testimonial-author {
+    font-weight: bold;
+    color: var(--claro);
+    border-top: 1px solid var(--claro);
+    padding-top: 10px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+/* =====================================================
+   PIE DE PÁGINA
+   ===================================================== */
+footer {
+    background: var(--secundario);
+    color: var(--claro);
+    padding: 50px 0 20px;
+    border-top: 2px solid var(--claro);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-column h3 {
+    color: var(--claro);
+    margin-top: 0;
+    border-bottom: 2px solid var(--claro);
+    padding-bottom: 5px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+    color: var(--claro);
+}
+
+.footer-column ul li a {
+    color: var(--claro);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--claro);
+}
+
+.footer-column ul li a:hover {
+    border-bottom: 1px solid var(--claro);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 2px solid rgba(0, 0, 0, 0.3);
+    color: var(--claro);
+    font-size: 0.9rem;
+}
+
+/* =====================================================
+   BARRA DE ACCESIBILIDAD
+   ===================================================== */
+.navbar-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--secundario);
+    color: var(--claro);
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    border-top: 2px solid var(--claro);
+}
+
+.navbar-container2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 64px;
+}
+
+.logo2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--claro);
+}
+
+.dropdown-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.dropdown-btn {
+    min-width: 120px;
+    background-color: var(--claro);
+    color: var(--primario);
+    border: 2px solid var(--claro);
+}
+
+.dropdown-btn:hover {
+    background-color: var(--primario);
+    color: var(--claro);
+}
+
+.dropdown-menu {
+    background-color: var(--secundario);
+    border: 2px solid var(--claro);
+}
+
+.dropdown-item {
+    color: var(--claro);
+}
+
+.dropdown-item:hover {
+    background-color: var(--acento);
+    color: var(--claro);
+}
+
+/* =====================================================
+   AJUSTES RESPONSIVOS
+   ===================================================== */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav ul {
+        margin-top: 20px;
+        justify-content: center;
+    }
+    
+    nav ul li {
+        margin: 0 10px;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+}
+
+/* =====================================================
+   FUNCIONALIDADES DE ACCESIBILIDAD
+   ===================================================== */
+.highlighted-text {
+    background-color: var(--claro) !important;
+    color: var(--primario) !important;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.paragraph-highlighted {
+    border: 2px solid var(--claro);
+    border-left: 5px solid var(--claro);
+    margin: 15px 0;
+    padding: 12px 15px 12px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#unique-focus-top,
+#unique-focus-bottom {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+}
