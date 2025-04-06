@@ -36,11 +36,11 @@
                 </div>
                 <nav>
                     <ul>
-                        <li tabindex="4"><a href="#">Inicio</a></li>
-                        <li tabindex="5"><a href="#">Servicios</a></li>
-                        <li tabindex="6"><a href="#">Personal</a></li>
-                        <li tabindex="7"><a href="#">Pide tu Cita</a></li>
-                        <li tabindex="8"><a href="#">Contacto</a></li>
+                        <li><a tabindex="4" href="#">Inicio</a></li>
+                        <li><a tabindex="5" href="#">Servicios</a></li>
+                        <li><a tabindex="6" href="#">Personal</a></li>
+                        <li><a tabindex="7" href="#">Pide tu Cita</a></li>
+                        <li><a tabindex="8" href="#">Contacto</a></li>
                     </ul>
                 </nav>
             </div>
@@ -208,10 +208,10 @@
                                 Accesibilidad Visual
                             </button>
                             <ul class="dropdown-menu">
-                                <li><button class="dropdown-item" type="button" id="increase-font">Aumentar Texto</button></li>
-                                <li><button class="dropdown-item" type="button" id="decrease-font">Disminuir Texto</button></li>
-                                <li><button class="dropdown-item" type="button" onclick="toggleDarkMode()">Modo oscuro</button></li>
-                                <li><button class="dropdown-item" type="button" onclick="toggleGrayscale()">Escala de grises</button></li>
+                                <li><button class="dropdown-item" type="button" id="increase-font" tabindex="-1">Aumentar Texto</button></li>
+                                <li><button class="dropdown-item" type="button" id="decrease-font"tabindex="-1">Disminuir Texto</button></li>
+                                <li><button class="dropdown-item" type="button" onclick="toggleDarkMode()" tabindex="-1">Modo oscuro</button></li>
+                                <li><button class="dropdown-item" type="button" onclick="toggleGrayscale()" tabindex="-1">Escala de grises</button></li>
                             </ul>
                         </div>
 
@@ -221,9 +221,9 @@
                                 Accesibilidad Cognitiva
                             </button>
                             <ul class="dropdown-menu">
-                                <li><button class="dropdown-item" type="button" id="highlighted-text">Resaltar texto</button></li>
-                                <li><button class="dropdown-item" type="button" id="focus-frame-toggle">Recuadro de Enfoque</button></li>
-                                <li><button class="dropdown-item" type="button" id="paragraph-highlight-toggle">
+                                <li><button class="dropdown-item" type="button" id="highlighted-text" tabindex="-1">Resaltar texto</button></li>
+                                <li><button class="dropdown-item" type="button" id="focus-frame-toggle" tabindex="-1">Recuadro de Enfoque</button></li>
+                                <li><button class="dropdown-item" type="button" id="paragraph-highlight-toggle" tabindex="-1">
                                                    Resaltar Párrafos</button></li>
                             </ul>
                         </div>
