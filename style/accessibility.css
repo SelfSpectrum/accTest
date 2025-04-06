@@ -46,5 +46,5 @@
 .active-grayscale {
     background-color:crimson !important;       /* Fondo gris claro */
     color:blueviolet !important;               /* Texto oscuro */
-    border-color:yellow !important;            /* Borde gris claro */
+    border-color:yellow !important;           /* Borde gris claro */
 }   

@@ -30,6 +30,40 @@ function irSiguiente() {
     elementoActual.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
+function irAnterior() {
+    const elementos = obtenerElementosEnfocables(); /* Obtiene la lista actualizada */
+
+    /* Si no hay elementos con tabindex, no hace nada */
+    if (elementos.length === 0) return;
+
+    /* retocede al santerior índice, ciclando al principio si se pasa del último */
+    indiceActual = (indiceActual - 1) % elementos.length;
+
+    /*Enfoca el elemento actual */
+    const elementoActual = elementos[indiceActual];
+    elementoActual.focus();
+
+    /* Hace scroll hacia el elemento enfocado, centrado verticalmente, con animación suave */
+    elementoActual.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function irEmergencia() {
+    const elementos = obtenerElementosEnfocables(); /* Obtiene la lista actualizada */
+
+    /* Si no hay elementos con tabindex, no hace nada */
+    if (elementos.length === 0) return;
+
+    /* retocede al santerior índice, ciclando al principio si se pasa del último */
+    indiceActual = 13 % elementos.length;
+
+    /*Enfoca el elemento actual */
+    const elementoActual = elementos[indiceActual];
+    elementoActual.focus();
+
+    /* Hace scroll hacia el elemento enfocado, centrado verticalmente, con animación suave */
+    elementoActual.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
 /* Función que se ejecuta cuando se carga la página
 pcionalmente, enfoca el primer elemento con tabindex */
 window.onload = function() {

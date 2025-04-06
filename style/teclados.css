@@ -8,7 +8,7 @@
 }
 
 .elemento-enfocable:focus {
-    background-color: #f5f9ff;
+    background-color: rgb(120, 9, 120);
 }
 
 #arriba {
