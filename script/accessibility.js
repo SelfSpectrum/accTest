@@ -645,7 +645,7 @@ function toggleDarkMode() {
 function toggleGrayscale() {
   isGrayscale = !isGrayscale;
 
-  // Create a style element once if it doesn't exist
+  // Crea un elemento para estilos siempre y cuando no exista de base
   let styleElement = document.getElementById("grayscale-style");
   if (!styleElement) {
     styleElement = document.createElement("style");
@@ -653,14 +653,12 @@ function toggleGrayscale() {
     document.head.appendChild(styleElement);
   }
 
-  // Toggle the stylesheet content
+  // Modifica los elementos de estilos
   if (isGrayscale) {
     styleElement.textContent = `
       body > *:not(.accessibility-menu) {
         filter: grayscale(100%) !important;
       }
     `;
-  } else {
-    styleElement.textContent = "";
-  }
+  } else styleElement.textContent = "";
 }

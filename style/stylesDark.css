@@ -1,83 +1,25 @@
-/*Cambio a modo oscuro*/
-
-#themeButton {
-    position: fixed;
-    bottom: 20px; /* Distancia desde abajo */
-    right: 20px; /* Distancia desde la derecha */
-    width: 50px;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    color: rgb(33, 33, 33);
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
-}
-
-#grayscaleButton {
-    position: fixed;
-    bottom: 90px; /* Distancia desde abajo */
-    right: 20px; /* Distancia desde la derecha */
-    width: 50px;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
-}
-
-.grayscale {
-    filter: grayscale(100%) !important;
-    transition: filter 0.5s ease;
-}
-
-#contrastButton {
-    position: fixed;
-    bottom: 90px; /* Distancia desde abajo */
-    right: 20px; /* Distancia desde la derecha */
-    width: 50px;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: red;
-    color: rgb(33, 33, 33);
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
-}
-
-.bajo-contraste {
-    filter: contrast(80%);
-}
-
-.alto-contraste {
-    background-color: black !important;
-    color: yellow !important;
-    filter: contrast(150%);
-}
-
-/*códigdo de style.css con .services oscuro*/
-
-/* Paleta de colores */
 :root {
-    --primario: #009830;
-    --secundario: #c83600;
-    --acento: #054f26;
-    --claro: #ecf0f1;
-    --oscuro: #2c3e50;
-    --exito: #27ae60;
+    --primario: #00c542; /* Color institucional más brillante para modo oscuro */
+    --secundario: #ff5722; /* Color complementario para acentos más vibrante */
+    --acento: #06bf5c; /* Para botones y elementos interactivos más brillante */
+    --claro: #2c3e50; /* Ahora más oscuro para fondos de secciones */
+    --oscuro: #ecf0f1; /* Invertido para textos */
+    --exito: #2ecc71; /* Para mensajes de éxito más brillante */
+    --fondo-principal: #1a1a1a; /* Fondo principal oscuro */
+    --fondo-secundario: #2d2d2d; /* Fondo secundario para tarjetas */
+    --fondo-terciario: #333333; /* Otro nivel de fondo */
+    --texto-principal: #f0f0f0; /* Texto principal claro */
+    --texto-secundario: #c0c0c0; /* Texto secundario más tenue */
+    --sombra: rgba(0, 0, 0, 0.5); /* Sombras más intensas */
 }
 
-/* Estilos base */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: "Arial", sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    color: var(--oscuro);
-    background-color: rgb(33, 33, 33);
+    color: var(--texto-principal);
+    background-color: var(--fondo-principal);
 }
 
 .container {
@@ -86,12 +28,15 @@ body {
     margin: 0 auto;
 }
 
-/* Estilos de cabecera */
 header {
-    background: linear-gradient(135deg, var(--primario), var(--secundario));
-    color: white;
+    background: linear-gradient(
+        135deg,
+        var(--primario),
+        var(--secundario)
+    ); /* Mantenemos el gradiente pero con colores actualizados */
+    color: var(--texto-principal);
     padding: 1rem 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px var(--sombra);
 }
 
 .header-content {
@@ -121,7 +66,6 @@ header {
     opacity: 0.9;
 }
 
-/* Navegación */
 nav ul {
     display: flex;
     list-style: none;
@@ -132,7 +76,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: var(--texto-principal);
     text-decoration: none;
     font-weight: 600;
     padding: 5px 10px;
@@ -141,28 +85,33 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background: rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.25);
 }
 
-/* Sección Héroe */
 .hero {
-    background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.nostalgica.cl%2Fwp-content%2Fuploads%2F2020%2F08%2Ffoto.jpg&f=1&nofb=1&ipt=1886769c57321d047716c4fd8f57dc0baa19684c6be4fd0d39011a0e1b6198e3&ipo=images') no-repeat center center/cover;
+    background: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.nostalgica.cl%2Fwp-content%2Fuploads%2F2020%2F08%2Ffoto.jpg&f=1&nofb=1&ipt=1886769c57321d047716c4fd8f57dc0baa19684c6be4fd0d39011a0e1b6198e3&ipo=images")
+        no-repeat center center/cover;
     height: 500px;
     display: flex;
     align-items: center;
-    color: white;
+    color: var(--texto-principal);
     text-align: center;
     position: relative;
 }
 
 .hero::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.5);
+    background: rgba(
+        0,
+        0,
+        0,
+        0.7
+    ); /* Aumentamos la opacidad del overlay para modo oscuro */
 }
 
 .hero-content {
@@ -186,11 +135,13 @@ nav ul li a:hover {
     display: inline-block;
     padding: 12px 30px;
     background: var(--acento);
-    color: white;
+    color: var(--texto-principal);
     text-decoration: none;
     border-radius: 30px;
     font-weight: bold;
-    transition: transform 0.3s, background 0.3s;
+    transition:
+        transform 0.3s,
+        background 0.3s;
 }
 
 .btn:hover {
@@ -198,10 +149,9 @@ nav ul li a:hover {
     transform: translateY(-3px);
 }
 
-/* Sección de Servicios */
 .services {
     padding: 60px 0;
-    background-color: rgb(44,44,44);
+    background: var(--fondo-secundario);
 }
 
 .section-title {
@@ -217,12 +167,11 @@ nav ul li a:hover {
 }
 
 .service-card {
-    background: var(--claro);
+    background: var(--fondo-terciario);
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px var(--sombra);
     transition: transform 0.3s;
-    background-color: rgb(53, 53, 53);;
 }
 
 .service-card:hover {
@@ -235,7 +184,7 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--texto-principal);
     font-size: 2rem;
 }
 
@@ -248,14 +197,9 @@ nav ul li a:hover {
     margin-top: 0;
 }
 
-.service-content p {
-    color: white;
-}
-
-/* Sección de Emergencias */
 .emergency {
     background: var(--secundario);
-    color: white;
+    color: var(--texto-principal);
     padding: 40px 0;
     text-align: center;
 }
@@ -265,37 +209,39 @@ nav ul li a:hover {
 }
 
 .emergency .btn {
-    background: white;
-    color: var(--secundario);
+    background: var(--fondo-terciario);
+    color: var(--texto-principal);
 }
 
-/* Sección de Doctores */
 .doctors {
     padding: 60px 0;
-    background: rgb(33, 33, 33);
+    background: var(--fondo-principal);
 }
 
 .doctors-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(250px, 1fr)
+    ); /* Grid responsivo */
     gap: 30px;
 }
 
 .doctor-card {
-    background-color: rgb(53, 53, 53);;
+    background: var(--fondo-secundario);
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px var(--sombra);
     text-align: center;
 }
 
 .doctor-img {
     height: 250px;
-    background: #bdc3c7;
+    background: #555; /* Tono gris medio para imágenes de doctores */
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--texto-principal);
     font-size: 2rem;
 }
 
@@ -309,25 +255,23 @@ nav ul li a:hover {
 }
 
 .doctor-info p {
-    color: #c3eff2;
+    color: var(--texto-secundario);
     margin-top: 0;
 }
 
-/* Testimonios */
 .testimonials {
     padding: 60px 0;
-    background: rgb(44, 44, 44);
+    background: var(--fondo-secundario);
 }
 
 .testimonial-card {
-    background-color: rgb(53, 53, 53);
-    color: rgb(62, 191, 255);
+    background: var(--fondo-terciario);
     padding: 30px;
     border-radius: 8px;
     margin: 0 auto;
     max-width: 800px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .testimonial-card p {
@@ -340,10 +284,9 @@ nav ul li a:hover {
     color: var(--primario);
 }
 
-/* Pie de Página */
 footer {
-    background: var(--oscuro);
-    color: white;
+    background: #121212; /* Fondo muy oscuro para el pie de página */
+    color: var(--texto-principal);
     padding: 50px 0 20px;
 }
 
@@ -355,7 +298,7 @@ footer {
 }
 
 .footer-column h3 {
-    color: white;
+    color: var(--texto-principal);
     margin-top: 0;
 }
 
@@ -369,40 +312,445 @@ footer {
 }
 
 .footer-column ul li a {
-    color: #bdc3c7;
+    color: var(--texto-secundario);
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .footer-column ul li a:hover {
-    color: white;
+    color: var(
+        --texto-principal
+    ); /* Al pasar el cursor, enlaces más visibles */
 }
 
 .copyright {
     text-align: center;
     padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    color: #bdc3c7;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Separador sutil */
+    color: var(--texto-secundario);
     font-size: 0.9rem;
 }
 
-/* Ajustes Responsivos */
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column;
         text-align: center;
     }
-    
+
     nav ul {
         margin-top: 20px;
         justify-content: center;
     }
-    
+
     nav ul li {
         margin: 0 10px;
     }
-    
+
     .hero h2 {
         font-size: 2rem;
     }
+}
+
+.highlighted-text {
+    background-color: #444 !important; /* Más oscuro para el modo oscuro */
+    color: #ffff00 !important; /* Amarillo más visible */
+}
+
+.focus-overlay-top,
+.focus-overlay-bottom {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Más oscuro para modo oscuro */
+    z-index: 999;
+    pointer-events: none;
+    display: none;
+}
+
+.focus-overlay-top {
+    top: 0;
+}
+
+.focus-overlay-bottom {
+    bottom: 0;
+}
+
+.paragraph-highlighted {
+    border: 1px solid #444;
+    border-left: 5px solid var(--primario);
+    border-radius: 5px;
+    margin: 15px 0;
+    padding: 12px 15px 12px 20px;
+    background: var(--fondo-secundario);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.paragraph-highlighted:hover {
+    box-shadow: 0 3px 8px var(--sombra);
+    border-left-width: 8px;
+}
+
+.paragraph-highlighted::before,
+.paragraph-highlighted::after {
+    content: "";
+    height: 1px;
+    background: linear-gradient(to right, var(--primario), transparent);
+    width: 100%;
+    position: absolute;
+    left: 0;
+}
+
+.paragraph-highlighted::before {
+    top: 0; /* Línea en la parte superior */
+}
+
+.paragraph-highlighted::after {
+    bottom: 0; /* Línea en la parte inferior */
+}
+
+body.contrast-dark {
+    background-color: white !important;
+    color: black !important;
+}
+
+body.contrast-dark *:not(#accessibility-btn):not(.contrast-submenu *) {
+    background-color: white !important;
+    color: black !important;
+    border-color: black !important;
+}
+
+body.contrast-yellow {
+    background-color: #ffff00 !important;
+    color: black !important;
+}
+
+body.contrast-yellow *:not(#accessibility-btn):not(.contrast-submenu *) {
+    background-color: #ffff00 !important;
+    color: black !important;
+    border-color: black !important;
+}
+
+body.contrast-blue {
+    background-color: #0000aa !important;
+    color: white !important;
+}
+
+body.contrast-blue *:not(#accessibility-btn):not(.contrast-submenu *) {
+    background-color: #0000aa !important;
+    color: white !important;
+    border-color: white !important;
+}
+
+body.contrast-green {
+    background-color: #008800 !important;
+    color: white !important;
+}
+
+body.contrast-green *:not(#accessibility-btn):not(.contrast-submenu *) {
+    background-color: #008800 !important;
+    color: white !important;
+    border-color: white !important;
+}
+
+body.contrast-red {
+    background-color: #aa0000 !important;
+    color: white !important;
+}
+
+body.contrast-red *:not(#accessibility-btn):not(.contrast-submenu *) {
+    background-color: #aa0000 !important;
+    color: white !important;
+    border-color: white !important;
+}
+
+body[class*="contrast-"] #accessibility-btn {
+    border: 3px solid #ffffff !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8) !important;
+}
+
+body.contrast-dark #accessibility-btn,
+body.contrast-yellow #accessibility-btn {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+body.contrast-blue #accessibility-btn,
+body.contrast-green #accessibility-btn,
+body.contrast-red #accessibility-btn {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+body.contrast-dark .accessibility-menu,
+body.contrast-yellow .accessibility-menu {
+    background-color: #ffffff !important;
+    border: 3px solid #000000 !important;
+}
+
+body.contrast-blue .accessibility-menu,
+body.contrast-green .accessibility-menu,
+body.contrast-red .accessibility-menu {
+    background-color: #000000 !important;
+    border: 3px solid #ffffff !important;
+}
+
+body.contrast-dark .accessibility-menu button,
+body.contrast-yellow .accessibility-menu button {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: 2px solid #000000 !important;
+}
+
+body.contrast-blue .accessibility-menu button,
+body.contrast-green .accessibility-menu button,
+body.contrast-red .accessibility-menu button {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 2px solid #ffffff !important;
+}
+
+body[class*="contrast-"] .contrast-submenu {
+    background-color: #ffffff !important;
+    border: 2px solid #000000 !important;
+}
+
+body[class*="contrast-"] .contrast-submenu button {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border-bottom: 1px solid #cccccc !important;
+    text-align: left !important;
+}
+
+body[class*="contrast-"] .contrast-submenu button:hover {
+    background-color: #eeeeee !important;
+}
+
+body[class*="contrast-"] .focus-overlay-top,
+body[class*="contrast-"] .focus-overlay-bottom {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    z-index: 1100 !important; /* Mayor z-index para sobreponerse a otros elementos */
+}
+
+body .highlighted-text {
+    background-color: yellow !important;
+    color: black !important;
+}
+
+body.contrast-dark .highlighted-text {
+    background-color: #ffff00 !important;
+    color: #000000 !important;
+    border: none !important;
+}
+
+body.contrast-yellow .highlighted-text {
+    background-color: #ff9900 !important;
+    color: #000000 !important;
+    border: none !important;
+}
+
+body.contrast-blue .highlighted-text {
+    background-color: #ffff00 !important;
+    color: #000000 !important;
+    border: none !important;
+}
+
+body.contrast-green .highlighted-text {
+    background-color: #ffff00 !important;
+    color: #000000 !important;
+    border: none !important;
+}
+
+body.contrast-red .highlighted-text {
+    background-color: #ffff00 !important;
+    color: #000000 !important;
+    border: none !important;
+}
+
+body[class*="contrast-"] .accessibility-container,
+body[class*="contrast-"] .accessibility-menu,
+body[class*="contrast-"] .contrast-submenu {
+    z-index: 1200 !important;
+}
+
+.focus-overlay-top,
+.focus-overlay-bottom {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    z-index: 2000 !important;
+    /* Prevenir que las reglas de contraste afecten a estos elementos */
+    all: initial !important;
+    position: fixed !important;
+    left: 0 !important;
+    width: 100% !important;
+    pointer-events: none !important;
+    display: block !important;
+    background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.focus-overlay-top {
+    top: 0 !important;
+}
+
+.focus-overlay-bottom {
+    bottom: 0 !important;
+}
+
+body:not([class*="contrast-"]) .highlighted-text {
+    background-color: yellow !important;
+    color: black !important;
+}
+
+body.contrast-dark .highlighted-text {
+    background-color: #ffff00 !important;
+    color: #000000 !important;
+    border: 1px solid #000000 !important;
+}
+
+body.contrast-yellow .highlighted-text {
+    background-color: #ff9900 !important;
+    color: #000000 !important;
+    border: 1px solid #000000 !important;
+}
+
+body.contrast-blue .highlighted-text {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #ffffff !important;
+}
+
+body.contrast-green .highlighted-text {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #ffffff !important;
+}
+
+body.contrast-red .highlighted-text {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #ffffff !important;
+}
+.accessibility-container {
+    z-index: 3000 !important;
+}
+
+.accessibility-menu,
+.contrast-submenu {
+    z-index: 3001 !important;
+}
+
+.focus-frame-overlay {
+    position: fixed !important;
+    left: 0 !important;
+    width: 100% !important;
+    background-color: rgba(
+        0,
+        0,
+        0,
+        0.85
+    ) !important; /* Más oscuro para modo oscuro */
+    pointer-events: none !important;
+    z-index: 9999 !important;
+    display: none;
+}
+
+.focus-frame-top {
+    top: 0 !important;
+}
+
+.focus-frame-bottom {
+    bottom: 0 !important;
+}
+
+body[class*="contrast-"] .focus-frame-overlay,
+html .focus-frame-overlay,
+:root .focus-frame-overlay {
+    background-color: rgba(
+        0,
+        0,
+        0,
+        0.85
+    ) !important; /* Más oscuro para modo oscuro */
+}
+
+#unique-focus-container {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    pointer-events: none !important;
+    z-index: 9999 !important;
+    display: none !important;
+    background-color: transparent !important;
+    all: initial !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    pointer-events: none !important;
+    z-index: 9999 !important;
+}
+
+#unique-focus-top {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 0 !important;
+    background-color: rgba(
+        0,
+        0,
+        0,
+        0.85
+    ) !important; /* Más oscuro para modo oscuro */
+    opacity: 1 !important;
+    mix-blend-mode: normal !important;
+}
+
+#unique-focus-area {
+    position: absolute !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 120px !important;
+    background-color: transparent !important;
+    border-top: 2px dashed rgba(255, 255, 255, 0.8) !important; /* Más visible en modo oscuro */
+    border-bottom: 2px dashed rgba(255, 255, 255, 0.8) !important; /* Más visible en modo oscuro */
+}
+
+#unique-focus-bottom {
+    position: absolute !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 0 !important;
+    background-color: rgba(
+        0,
+        0,
+        0,
+        0.85
+    ) !important; /* Más oscuro para modo oscuro */
+    opacity: 1 !important;
+    mix-blend-mode: normal !important;
+}
+
+html body #unique-focus-top,
+html body #unique-focus-bottom,
+body[class*="contrast-"] #unique-focus-top,
+body[class*="contrast-"] #unique-focus-bottom,
+:root body #unique-focus-top,
+:root body #unique-focus-bottom {
+    background-color: rgba(
+        0,
+        0,
+        0,
+        0.85
+    ) !important; /* Más oscuro para modo oscuro */
+    opacity: 1 !important;
+}
+
+#unique-focus-container,
+#unique-focus-top,
+#unique-focus-area,
+#unique-focus-bottom {
+    visibility: visible !important;
 }
