@@ -18,6 +18,10 @@ body {
     background-color: #f9f9f9;
 }
 
+[tabindex]:focus-visible {
+    outline: 2px invert;
+}
+
 .container {
     max-width: 80%;
     margin: 0 auto;
@@ -97,6 +101,12 @@ nav ul li a:hover {
     text-decoration:solid;
 }
 
+    nav ul li a:focus-visible {
+    background: rgba(255,255,255,0.2);
+    color: rgb(255,255,0);
+    text-decoration:solid;
+}
+
 /* Sección Héroe */
 .hero {
     background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.nostalgica.cl%2Fwp-content%2Fuploads%2F2020%2F08%2Ffoto.jpg&f=1&nofb=1&ipt=1886769c57321d047716c4fd8f57dc0baa19684c6be4fd0d39011a0e1b6198e3&ipo=images') no-repeat center center/cover;
@@ -151,6 +161,11 @@ nav ul li a:hover {
     transform: scale(1.4, 1.4);
 }
 
+.btn:focus-visible{
+    color: yellow;
+    transform: scale(1.4, 1.4);
+}
+
 /* Sección de Servicios */
 .services {
     padding: 60px 0;
@@ -176,6 +191,15 @@ nav ul li a:hover {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s;
     height: 100%;
+}
+
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-link:focus-visible .service-card {
+    transform: translateY(-10px);
 }
 
 .card-link {
@@ -211,10 +235,6 @@ nav ul li a:hover {
 
 .card-link-text:hover::after {
     transform: scaleX(1);
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
 }
 
 .service-img {
@@ -327,7 +347,7 @@ nav ul li a:hover {
 footer {
     background: var(--oscuro);
     color: white;
-    padding: 50px 0 20px;
+    padding: 25px 0;
 }
 
 .footer-grid {
@@ -351,14 +371,23 @@ footer {
     margin-bottom: 10px;
 }
 
-.footer-column ul li a {
-    color: #bdc3c7;
-    text-decoration: none;
-    transition: color 0.3s;
+.footer-column ul a {
+    text-decoration: none !important;
 }
 
-.footer-column ul li a:hover {
+.footer-column ul a li {
+    color: #bdc3c7;
+    transition: color 0.3s, background 0.3s;
+}
+
+.footer-column ul a li:hover {
     color: white;
+    background: rgba(255,255,255,0.2);
+}
+
+.footer-column ul a:focus-visible li {
+    color: white;
+    background: rgba(255,255,255,0.2);
 }
 
 .copyright {
