@@ -664,13 +664,39 @@ function toggleGrayscale() {
 ///////////////////////////////////////////////////////////////////
 // PROBANDO COSAS
 ///////////////////////////////////////////////////////////////////
-document.addEventListener("keydown", function(event){
+document.addEventListener("keydown",deteccion )
 
-  if(event=="a") {
-    irEmergencia()
+  function deteccion(event) {
+    const teclaPrecionada= event.key;
+    console.log(teclaPrecionada)
+    /*Función para mover el enfoque al siguiente elemento*/
+    if( teclaPrecionada == "s") {
+      const elementos = obtenerElementosEnfocables(); 
+      if (elementos.length === 0) return;
+      indiceActual = (indiceActual + 1) % elementos.length;
+      const elementoActual = elementos[indiceActual];
+      elementoActual.focus();
+      elementoActual.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    /* Funcion para mover al enfoque al anterior elemento */
+    else if( teclaPrecionada == "a"){
+      const elementos = obtenerElementosEnfocables(); 
+      if (elementos.length === 0) return;
+      indiceActual = (indiceActual - 1) % elementos.length;
+      const elementoActual = elementos[indiceActual];
+      elementoActual.focus();
+      elementoActual.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    /* Funcion para ir llamda de emergencia */
+    else if( teclaPrecionada == "e"){
+      const elementos = obtenerElementosEnfocables();
+      if (elementos.length === 0) return;
+      indiceActual = 12 % elementos.length;
+      const elementoActual = elementos[indiceActual];
+      elementoActual.focus();
+      elementoActual.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
   }
-
-})
 
 /* Variable para seguir la posición actual del enfoque (índice en la lista de elementos enfocables) */
 let indiceActual = 0;
@@ -679,34 +705,6 @@ function obtenerElementosEnfocables() {
         .filter(el => el.tabIndex > 0)              
         .sort((a, b) => a.tabIndex - b.tabIndex);   
     return elementos;
-}
-
-/*Función para mover el enfoque al siguiente elemento*/
-function irSiguiente() {
-    const elementos = obtenerElementosEnfocables(); 
-    if (elementos.length === 0) return;
-    indiceActual = (indiceActual + 1) % elementos.length;
-    const elementoActual = elementos[indiceActual];
-    elementoActual.focus();
-    elementoActual.scrollIntoView({ behavior: 'smooth', block: 'center' });
-}
-
-function irAnterior() {
-    const elementos = obtenerElementosEnfocables(); 
-    if (elementos.length === 0) return;
-    indiceActual = (indiceActual - 1) % elementos.length;
-    const elementoActual = elementos[indiceActual];
-    elementoActual.focus();
-    elementoActual.scrollIntoView({ behavior: 'smooth', block: 'center' });
-}
-
-function irEmergencia() {
-    const elementos = obtenerElementosEnfocables();
-    if (elementos.length === 0) return;
-    indiceActual = 13 % elementos.length;
-    const elementoActual = elementos[indiceActual];
-    elementoActual.focus();
-    elementoActual.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
 /* Función que se ejecuta cuando se carga la página
