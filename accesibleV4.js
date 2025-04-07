@@ -1,348 +1,307 @@
-// Configuración global del sistema
-const AccesibilidadConfig = {
-    container: {
-      position: 'fixed',
-      bottom: '20px',
-      right: '20px',
-      zIndex: 9999,
-      gap: '10px',
+/**
+ * Sistema de Accesibilidad Web
+ * Provee botones flotantes para modo oscuro y escala de grises
+ */
+
+// Clase principal que gestiona toda la aplicación de accesibilidad
+class AccessibilityManager {
+  constructor() {
+    // Configuración centralizada
+    this.config = {
+      container: {
+        position: 'fixed',
+        bottom: '20px',
+        right: '20px',
+        zIndex: 9999,
+        gap: '10px'
+      },
+      buttonBase: {
+        width: '40px',
+        height: '40px',
+        borderRadius: '50%',
+        border: 'none',
+        fontSize: '16px',
+        cursor: 'pointer',
+        boxShadow: '0 2px 5px rgba(0, 0, 0, 0.3)'
+      },
+      buttons: {
+        darkMode: {
+          icon: '🌙',
+          activeTitle: 'Volver a Modo Claro',
+          inactiveTitle: 'Cambiar a Modo Oscuro',
+          activeColor: '#ffffff',
+          activeTextColor: '#000000',
+          inactiveColor: '#000000',
+          inactiveTextColor: 'white'
+        },
+        grayscale: {
+          icon: '◐',
+          activeTitle: 'Volver a Modo Color',
+          inactiveTitle: 'Modo Escala de Grises',
+          activeColor: '#f8f9fa',
+          activeTextColor: '#6c757d',
+          inactiveColor: '#6c757d',
+          inactiveTextColor: 'white'
+        }
+      },
+      stylesheets: {
+        light: 'styles.css',
+        dark: 'stylesDark.css'
+      }
+    };
+
+    // Estado de la aplicación
+    this.state = {
+      isDarkMode: false,
+      isGrayscale: false
+    };
+
+    // Contenedor principal y botones
+    this.container = null;
+    this.darkModeButton = null;
+    this.grayscaleButton = null;
+  }
+
+  /**
+   * Inicializa toda la aplicación de accesibilidad
+   */
+  initialize() {
+    this.createContainer();
+    this.createDarkModeButton();
+    this.createGrayscaleButton();
+    this.mountComponentsToDOM();
+    this.checkSystemPreferences();
+    this.setupDefaultCSSVariables();
+  }
+
+  /**
+   * Crea el contenedor principal para los botones
+   */
+  createContainer() {
+    this.container = document.createElement('div');
+    this.container.className = 'floating-menu-container';
+    this.applyStyles(this.container, {
+      ...this.config.container,
       display: 'flex',
       flexDirection: 'column-reverse',
       alignItems: 'center'
-    },
-    buttonBase: {
-      width: '40px',
-      height: '40px',
-      borderRadius: '50%',
-      border: 'none',
-      fontSize: '16px',
-      cursor: 'pointer',
-      boxShadow: '0 2px 5px rgba(0, 0, 0, 0.3)',
+    });
+  }
+
+  /**
+   * Crea el botón para el modo oscuro
+   */
+  createDarkModeButton() {
+    const btnConfig = this.config.buttons.darkMode;
+    this.darkModeButton = this.createButton({
+      className: 'dark-mode-button',
+      icon: btnConfig.icon,
+      title: btnConfig.inactiveTitle,
+      bgColor: btnConfig.inactiveColor,
+      textColor: btnConfig.inactiveTextColor
+    });
+    this.darkModeButton.onclick = () => this.toggleDarkMode();
+  }
+
+  /**
+   * Crea el botón para escala de grises
+   */
+  createGrayscaleButton() {
+    const btnConfig = this.config.buttons.grayscale;
+    this.grayscaleButton = this.createButton({
+      className: 'grayscale-button',
+      icon: btnConfig.icon,
+      title: btnConfig.inactiveTitle,
+      bgColor: btnConfig.inactiveColor,
+      textColor: btnConfig.inactiveTextColor
+    });
+    this.grayscaleButton.onclick = () => this.toggleGrayscale();
+  }
+
+  /**
+   * Agrega los componentes creados al DOM
+   */
+  mountComponentsToDOM() {
+    this.container.appendChild(this.grayscaleButton);
+    this.container.appendChild(this.darkModeButton);
+    document.body.appendChild(this.container);
+  }
+
+  /**
+   * Verifica y aplica las preferencias del sistema
+   */
+  checkSystemPreferences() {
+    const prefersDarkMode = window.matchMedia && 
+                            window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (prefersDarkMode) {
+      this.toggleDarkMode();
+    }
+  }
+
+  /**
+   * Configura variables CSS por defecto si no existen
+   */
+  setupDefaultCSSVariables() {
+    if (!document.documentElement.style.getPropertyValue('--background-color')) {
+      document.documentElement.style.setProperty('--background-color', '#ffffff');
+      document.documentElement.style.setProperty('--text-color', '#212529');
+    }
+  }
+
+  /**
+   * Activa/desactiva el modo oscuro
+   */
+  toggleDarkMode() {
+    this.state.isDarkMode = !this.state.isDarkMode;
+    this.updateDarkMode();
+  }
+
+  /**
+   * Actualiza la interfaz según el estado del modo oscuro
+   */
+  updateDarkMode() {
+    const currentStylesheet = this.findCurrentStylesheet();
+    const btnConfig = this.config.buttons.darkMode;
+    
+    if (!this.state.isDarkMode) {
+      // Activar modo oscuro
+      if (currentStylesheet) {
+        currentStylesheet.href = currentStylesheet.href.replace(
+          this.config.stylesheets.light, 
+          this.config.stylesheets.dark
+        );
+      } else {
+        this.createNewStylesheet(this.config.stylesheets.dark);
+      }
+      
+      this.applyStyles(this.darkModeButton, {
+        backgroundColor: btnConfig.activeColor,
+        color: btnConfig.activeTextColor
+      });
+      
+      this.darkModeButton.title = btnConfig.activeTitle;
+    } else {
+      // Desactivar modo oscuro
+      if (currentStylesheet) {
+        currentStylesheet.href = currentStylesheet.href.replace(
+          this.config.stylesheets.dark, 
+          this.config.stylesheets.light
+        );
+      } else {
+        this.createNewStylesheet(this.config.stylesheets.light);
+      }
+      
+      this.applyStyles(this.darkModeButton, {
+        backgroundColor: btnConfig.inactiveColor,
+        color: btnConfig.inactiveTextColor
+      });
+      
+      this.darkModeButton.title = btnConfig.inactiveTitle;
+    }
+  }
+
+  /**
+   * Activa/desactiva el modo escala de grises
+   */
+  toggleGrayscale() {
+    this.state.isGrayscale = !this.state.isGrayscale;
+    this.updateGrayscale();
+  }
+
+  /**
+   * Actualiza la interfaz según el estado de escala de grises
+   */
+  updateGrayscale() {
+    const btnConfig = this.config.buttons.grayscale;
+    
+    if (this.state.isGrayscale) {
+      document.documentElement.style.filter = 'grayscale(100%)';
+      this.applyStyles(this.grayscaleButton, {
+        backgroundColor: btnConfig.activeColor,
+        color: btnConfig.activeTextColor
+      });
+      
+      this.grayscaleButton.title = btnConfig.activeTitle;
+    } else {
+      document.documentElement.style.filter = '';
+      this.applyStyles(this.grayscaleButton, {
+        backgroundColor: btnConfig.inactiveColor,
+        color: btnConfig.inactiveTextColor
+      });
+      
+      this.grayscaleButton.title = btnConfig.inactiveTitle;
+    }
+  }
+
+  // MÉTODOS AUXILIARES
+
+  /**
+   * Aplica estilos CSS a un elemento
+   */
+  applyStyles(element, styles) {
+    Object.assign(element.style, styles);
+  }
+  
+  /**
+   * Crea un botón con las opciones especificadas
+   */
+  createButton(options) {
+    const button = document.createElement('button');
+    button.className = `floating-option-button ${options.className}`;
+    button.innerHTML = options.icon;
+    button.title = options.title;
+    
+    this.applyStyles(button, {
+      ...this.config.buttonBase,
+      backgroundColor: options.bgColor,
+      color: options.textColor,
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center'
-    },
-    buttons: {
-      darkMode: {
-        icon: '🌙',
-        activeTitle: 'Volver a Modo Claro',
-        inactiveTitle: 'Cambiar a Modo Oscuro',
-        activeColor: '#ffffff',
-        activeTextColor: '#000000',
-        inactiveColor: '#000000',
-        inactiveTextColor: 'white'
-      },
-      grayscale: {
-        icon: '◐',
-        activeTitle: 'Volver a Modo Color',
-        inactiveTitle: 'Modo Escala de Grises',
-        activeColor: '#f8f9fa',
-        activeTextColor: '#6c757d',
-        inactiveColor: '#6c757d',
-        inactiveTextColor: 'white'
-      }
-    },
-    stylesheets: {
-      light: 'styles.css',
-      dark: 'stylesDark.css'
-    }
-  };
-  
-  // Estado global de la aplicación
-  const EstadoAccesibilidad = {
-    isDarkMode: false,
-    isGrayscale: false
-  };
-  
-  // Utilidades generales
-  const Utilidades = {
-    /**
-     * Aplica estilos CSS a un elemento del DOM
-     * @param {HTMLElement} elemento - Elemento al que aplicar los estilos
-     * @param {Object} estilos - Objeto con pares propiedad-valor de CSS
-     */
-    aplicarEstilos: function(elemento, estilos) {
-      Object.assign(elemento.style, estilos);
-    },
+    });
     
-    /**
-     * Busca la hoja de estilos actualmente usada para temas
-     * @returns {HTMLLinkElement|null} - El elemento link o null si no se encuentra
-     */
-    buscarHojaEstilosActual: function() {
-      const links = document.querySelectorAll('link[rel="stylesheet"]');
-      for (let i = 0; i < links.length; i++) {
-        const href = links[i].getAttribute('href');
-        if (href && (href.includes(AccesibilidadConfig.stylesheets.light) || 
-                     href.includes(AccesibilidadConfig.stylesheets.dark))) {
-          return links[i];
-        }
-      }
-      return null;
-    },
-    
-    /**
-     * Crea un botón flotante con estilos y comportamiento definidos
-     * @param {Object} opciones - Configuración visual del botón
-     * @param {Function} funcionClick - Función a ejecutar al hacer clic
-     * @returns {HTMLButtonElement} - El botón creado
-     */
-    crearBoton: function(opciones, funcionClick) {
-      const boton = document.createElement('button');
-      boton.className = `floating-option-button ${opciones.className}`;
-      boton.innerHTML = opciones.icon;
-      boton.title = opciones.title;
-      
-      this.aplicarEstilos(boton, {
-        ...AccesibilidadConfig.buttonBase,
-        backgroundColor: opciones.bgColor,
-        color: opciones.textColor
-      });
-      
-      boton.onclick = funcionClick;
-      return boton;
-    }
-  };
-  
-  // Gestor de Modo Oscuro
-  const GestorModoOscuro = {
-    boton: null,
-    
-    /**
-     * Cambia entre modo claro y oscuro
-     */
-    cambiarModo: function() {
-      EstadoAccesibilidad.isDarkMode = !EstadoAccesibilidad.isDarkMode;
-      this.actualizarInterfaz();
-    },
-    
-    /**
-     * Actualiza la interfaz según el estado actual del modo oscuro
-     */
-    actualizarInterfaz: function() {
-      const hojaEstiloActual = Utilidades.buscarHojaEstilosActual();
-      const configBoton = AccesibilidadConfig.buttons.darkMode;
-      
-      if (!EstadoAccesibilidad.isDarkMode) {
-        // Activar modo oscuro
-        this.aplicarModoOscuro(hojaEstiloActual);
-        
-        Utilidades.aplicarEstilos(this.boton, {
-          backgroundColor: configBoton.activeColor,
-          color: configBoton.activeTextColor
-        });
-        
-        this.boton.title = configBoton.activeTitle;
-      } else {
-        // Activar modo claro
-        this.aplicarModoClaro(hojaEstiloActual);
-        
-        Utilidades.aplicarEstilos(this.boton, {
-          backgroundColor: configBoton.inactiveColor,
-          color: configBoton.inactiveTextColor
-        });
-        
-        this.boton.title = configBoton.inactiveTitle;
-      }
-    },
-    
-    /**
-     * Aplica el modo oscuro cambiando la hoja de estilos
-     * @param {HTMLLinkElement|null} hojaEstilo - Hoja de estilos actual (si existe)
-     */
-    aplicarModoOscuro: function(hojaEstilo) {
-      if (hojaEstilo) {
-        hojaEstilo.href = hojaEstilo.href.replace(
-          AccesibilidadConfig.stylesheets.light, 
-          AccesibilidadConfig.stylesheets.dark
-        );
-      } else {
-        const nuevaHoja = document.createElement('link');
-        nuevaHoja.rel = 'stylesheet';
-        nuevaHoja.href = AccesibilidadConfig.stylesheets.dark;
-        document.head.appendChild(nuevaHoja);
-      }
-    },
-    
-    /**
-     * Aplica el modo claro cambiando la hoja de estilos
-     * @param {HTMLLinkElement|null} hojaEstilo - Hoja de estilos actual (si existe)
-     */
-    aplicarModoClaro: function(hojaEstilo) {
-      if (hojaEstilo) {
-        hojaEstilo.href = hojaEstilo.href.replace(
-          AccesibilidadConfig.stylesheets.dark, 
-          AccesibilidadConfig.stylesheets.light
-        );
-      } else {
-        const nuevaHoja = document.createElement('link');
-        nuevaHoja.rel = 'stylesheet';
-        nuevaHoja.href = AccesibilidadConfig.stylesheets.light;
-        document.head.appendChild(nuevaHoja);
-      }
-    },
-    
-    /**
-     * Inicializa el botón de modo oscuro
-     * @returns {HTMLButtonElement} - El botón creado
-     */
-    inicializar: function() {
-      const configBoton = AccesibilidadConfig.buttons.darkMode;
-      const self = this;
-      
-      this.boton = Utilidades.crearBoton({
-        className: 'dark-mode-button',
-        icon: configBoton.icon,
-        title: configBoton.inactiveTitle,
-        bgColor: configBoton.inactiveColor,
-        textColor: configBoton.inactiveTextColor
-      }, function() {
-        self.cambiarModo();
-      });
-      
-      return this.boton;
-    }
-  };
-  
-  // Gestor de Escala de Grises
-  const GestorEscalaGrises = {
-    boton: null,
-    
-    /**
-     * Cambia entre modo color y escala de grises
-     */
-    cambiarModo: function() {
-      EstadoAccesibilidad.isGrayscale = !EstadoAccesibilidad.isGrayscale;
-      this.actualizarInterfaz();
-    },
-    
-    /**
-     * Actualiza la interfaz según el estado actual de escala de grises
-     */
-    actualizarInterfaz: function() {
-      const configBoton = AccesibilidadConfig.buttons.grayscale;
-      
-      if (EstadoAccesibilidad.isGrayscale) {
-        this.aplicarEscalaGrises();
-        
-        Utilidades.aplicarEstilos(this.boton, {
-          backgroundColor: configBoton.activeColor,
-          color: configBoton.activeTextColor
-        });
-        
-        this.boton.title = configBoton.activeTitle;
-      } else {
-        this.quitarEscalaGrises();
-        
-        Utilidades.aplicarEstilos(this.boton, {
-          backgroundColor: configBoton.inactiveColor,
-          color: configBoton.inactiveTextColor
-        });
-        
-        this.boton.title = configBoton.inactiveTitle;
-      }
-    },
-    
-    /**
-     * Aplica el filtro de escala de grises a la página
-     */
-    aplicarEscalaGrises: function() {
-      document.documentElement.style.filter = 'grayscale(100%)';
-    },
-    
-    /**
-     * Quita el filtro de escala de grises de la página
-     */
-    quitarEscalaGrises: function() {
-      document.documentElement.style.filter = '';
-    },
-    
-    /**
-     * Inicializa el botón de escala de grises
-     * @returns {HTMLButtonElement} - El botón creado
-     */
-    inicializar: function() {
-      const configBoton = AccesibilidadConfig.buttons.grayscale;
-      const self = this;
-      
-      this.boton = Utilidades.crearBoton({
-        className: 'grayscale-button',
-        icon: configBoton.icon,
-        title: configBoton.inactiveTitle,
-        bgColor: configBoton.inactiveColor,
-        textColor: configBoton.inactiveTextColor
-      }, function() {
-        self.cambiarModo();
-      });
-      
-      return this.boton;
-    }
-  };
-  
-  /**
-   * Sistema principal de accesibilidad
-   */
-  const SistemaAccesibilidad = {
-    contenedor: null,
-    
-    /**
-     * Crea el contenedor principal para los botones
-     */
-    crearContenedor: function() {
-      this.contenedor = document.createElement('div');
-      this.contenedor.className = 'floating-menu-container';
-      Utilidades.aplicarEstilos(this.contenedor, AccesibilidadConfig.container);
-      document.body.appendChild(this.contenedor);
-    },
-    
-    /**
-     * Inicializa y añade todos los componentes al contenedor
-     */
-    inicializarComponentes: function() {
-      // Añadir botones al contenedor
-      this.contenedor.appendChild(GestorEscalaGrises.inicializar());
-      this.contenedor.appendChild(GestorModoOscuro.inicializar());
-    },
-    
-    /**
-     * Verifica y aplica preferencias del sistema (como modo oscuro)
-     */
-    aplicarPreferenciasUsuario: function() {
-      // Verificar preferencia de modo oscuro del sistema
-      const prefersModoOscuro = window.matchMedia && 
-                               window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (prefersModoOscuro) {
-        GestorModoOscuro.cambiarModo();
-      }
-      
-      // Configurar variables CSS predeterminadas si no existen
-      if (!document.documentElement.style.getPropertyValue('--background-color')) {
-        document.documentElement.style.setProperty('--background-color', '#ffffff');
-        document.documentElement.style.setProperty('--text-color', '#212529');
-      }
-    },
-    
-    /**
-     * Inicializa todo el sistema de accesibilidad
-     */
-    inicializar: function() {
-      this.crearContenedor();
-      this.inicializarComponentes();
-      this.aplicarPreferenciasUsuario();
-      console.log('Sistema de accesibilidad inicializado correctamente');
-    }
-  };
-  
-  // Punto de entrada para inicializar el sistema
-  function iniciarSistemaAccesibilidad() {
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', function() {
-        SistemaAccesibilidad.inicializar();
-      });
-    } else {
-      SistemaAccesibilidad.inicializar();
-    }
+    return button;
   }
   
-  // Ejecutar la inicialización
-  iniciarSistemaAccesibilidad();
+  /**
+   * Encuentra la hoja de estilo actual
+   */
+  findCurrentStylesheet() {
+    const links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (let i = 0; i < links.length; i++) {
+      const href = links[i].getAttribute('href');
+      if (href && (href.includes(this.config.stylesheets.light) || href.includes(this.config.stylesheets.dark))) {
+        return links[i];
+      }
+    }
+    return null;
+  }
+
+  /**
+   * Crea una nueva hoja de estilo
+   */
+  createNewStylesheet(href) {
+    const newStylesheet = document.createElement('link');
+    newStylesheet.rel = 'stylesheet';
+    newStylesheet.href = href;
+    document.head.appendChild(newStylesheet);
+  }
+}
+
+// Función principal para iniciar el sistema de accesibilidad
+function initializeAccessibilityFeatures() {
+  const accessibilityManager = new AccessibilityManager();
+  accessibilityManager.initialize();
+}
+
+// Ejecutar la inicialización cuando el documento esté listo
+if (document.readyState === 'loading') {
+  document.onreadystatechange = function() {
+    if (document.readyState === 'interactive' || document.readyState === 'complete') {
+      initializeAccessibilityFeatures();
+      document.onreadystatechange = null;
+    }
+  };
+} else {
+  initializeAccessibilityFeatures();
+}
