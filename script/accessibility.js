@@ -659,3 +659,11 @@ function toggleGrayscale() {
     `;
   } else styleElement.textContent = "";
 }
+
+document.addEventListener("keydown", function(event){
+
+  if(event=="a") {
+    
+  }
+
+})
