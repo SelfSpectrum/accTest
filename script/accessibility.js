@@ -37,21 +37,12 @@ function decreaseFontSize() {
 }
 
 // Resaltar texto general
-export function setupTextHighlighter(buttonId = "highlighted-text") {
-  const highlightBtn = document.getElementById(buttonId);
-  let active = false;
-
-  if (highlightBtn) {
-    highlightBtn.addEventListener("click", () => {
-      const elements = document.querySelectorAll(
-        "p, li, h1, h2, h3, h4, h5, h6",
-      );
-      active = !active;
-      elements.forEach((el) => {
-        el.style.backgroundColor = active ? "#ffff99" : "";
-      });
-    });
-  }
+function toggleTextHighlighter() {
+  const elements = document.querySelectorAll("p, li, h1, h2, h3, h4, h5, h6");
+  highlightActive = !highlightActive;
+  elements.forEach((el) => {
+    el.style.backgroundColor = active ? "#ffff99" : "";
+  });
 }
 
 // Resaltar párrafos
