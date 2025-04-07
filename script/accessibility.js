@@ -55,24 +55,15 @@ export function setupTextHighlighter(buttonId = "highlighted-text") {
 }
 
 // Resaltar párrafos
-export function setupParagraphHighlighter(
-  buttonId = "paragraph-highlight-toggle",
-) {
-  const paragraphBtn = document.getElementById(buttonId);
-  let enabled = false;
-
-  if (paragraphBtn) {
-    paragraphBtn.addEventListener("click", () => {
-      const paragraphs = document.querySelectorAll("p");
-      enabled = !enabled;
-      paragraphs.forEach((p) => {
-        p.style.border = enabled ? "2px solid orange" : "";
-        p.style.padding = enabled ? "4px" : "";
-        p.style.borderRadius = enabled ? "6px" : "";
-        p.style.backgroundColor = enabled ? "#fff5e6" : "";
-      });
-    });
-  }
+function toggleParagraphHighlighter() {
+  const paragraphs = document.querySelectorAll("p");
+  paragraphHighlightActive = !paragraphHighlightActive;
+  paragraphs.forEach((p) => {
+    p.style.border = enabled ? "2px solid orange" : "";
+    p.style.padding = enabled ? "4px" : "";
+    p.style.borderRadius = enabled ? "6px" : "";
+    p.style.backgroundColor = enabled ? "#fff5e6" : "";
+  });
 }
 
 function toggleDarkMode() {
