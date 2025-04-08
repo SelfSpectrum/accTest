@@ -68,3 +68,32 @@
     border-radius: 0.375em !important;
     transition: all 0.3s ease; /* Transición suave */
 }
+
+/* === Jaseh === */
+
+/* -----------------------------------------------------
+   RECUADRO DE ENFOQUE HORIZONTAL
+   -----------------------------------------------------
+   Crea una franja horizontal transparente que sigue al cursor,
+   oscureciendo el resto de la página para facilitar la concentración.
+*/
+.focus-overlay-top,
+.focus-overlay-bottom {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Negro semitransparente */
+    z-index: 999;
+    pointer-events: none; /* Permite interactuar con elementos debajo */
+    display: none; /* Oculto por defecto, se muestra con JavaScript */
+}
+
+.focus-overlay-top {
+    top: 0;
+    /* La altura se ajusta dinámicamente con JavaScript */
+}
+
+.focus-overlay-bottom {
+    /* La posición top y altura se ajustan dinámicamente con JavaScript */
+    bottom: 0;
+}
