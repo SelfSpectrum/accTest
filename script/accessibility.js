@@ -11,11 +11,9 @@
  *
  * Todas las funciones están diseñadas para trabajar de forma independiente
  * o en combinación, adaptándose a las necesidades específicas de cada usuario.
- */
-
-/**
+ * ====================================
  * VARIABLES DE ESTADO
- * =================
+ * ====================================
  * Variables que guardan el estado actual de cada funcionalidad
  */
 let fontSize = 1;
@@ -92,7 +90,7 @@ function toggleDarkMode() {
 function toggleGrayscale() {
   isGrayscale = !isGrayscale;
 
-  // Crea un elemento para estilos siempre y cuando no exista de base
+  // Create a style element once if it doesn't exist
   let styleElement = document.getElementById("grayscale-style");
   if (!styleElement) {
     styleElement = document.createElement("style");
@@ -100,12 +98,14 @@ function toggleGrayscale() {
     document.head.appendChild(styleElement);
   }
 
-  // Modifica los elementos de estilos
+  // Toggle the stylesheet content
   if (isGrayscale) {
     styleElement.textContent = `
       body > *:not(.accessibility-menu) {
         filter: grayscale(100%) !important;
       }
     `;
-  } else styleElement.textContent = "";
+  } else {
+    styleElement.textContent = "";
+  }
 }
