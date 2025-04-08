@@ -254,3 +254,63 @@ function toggleGrayscale() {
     styleElement.textContent = "";
   }
 }
+
+
+///////////////////////////////////////////////////////////////////
+// PROBANDO COSAS
+///////////////////////////////////////////////////////////////////
+document.addEventListener("keydown",deteccion )
+
+  function deteccion(event) {
+    const teclaPrecionada= event.key;
+    console.log(teclaPrecionada)
+    /*Función para mover el enfoque al siguiente elemento*/
+    if( teclaPrecionada == "s") {
+      const elementos = obtenerElementosEnfocables(); 
+      if (elementos.length === 0) return;
+      indiceActual = (indiceActual + 1) % elementos.length;
+      const elementoActual = elementos[indiceActual];
+      elementoActual.focus();
+      elementoActual.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    /* Funcion para mover al enfoque al anterior elemento */
+    else if( teclaPrecionada == "a"){
+      const elementos = obtenerElementosEnfocables(); 
+      if (elementos.length === 0) return;
+      indiceActual = (indiceActual - 1) % elementos.length;
+      const elementoActual = elementos[indiceActual];
+      elementoActual.focus();
+      elementoActual.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    /* Funcion para ir llamda de emergencia */
+    else if( teclaPrecionada == "e"){
+      const elementos = obtenerElementosEnfocables();
+      if (elementos.length === 0) return;
+      indiceActual = 12 % elementos.length;
+      const elementoActual = elementos[indiceActual];
+      elementoActual.focus();
+      elementoActual.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+
+/* Variable para seguir la posición actual del enfoque (índice en la lista de elementos enfocables) */
+let indiceActual = 0;
+function obtenerElementosEnfocables() {
+    const elementos = Array.from(document.querySelectorAll('[tabindex]')) 
+        .filter(el => el.tabIndex > 0)              
+        .sort((a, b) => a.tabIndex - b.tabIndex);   
+    return elementos;
+}
+
+/* Función que se ejecuta cuando se carga la página
+pcionalmente, enfoca el primer elemento con tabindex */
+window.onload = function() {
+    const elementos = obtenerElementosEnfocables();
+    if (elementos.length > 0) {
+        elementos[0].focus();                       /*Enfoca el primero al cargar */
+    }
+};
+
+//////////////////////////////////////////////////
+//FIN DE PROBANDO COSAS
+//////////////////////////////////////////////////
