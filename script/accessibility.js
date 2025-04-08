@@ -36,11 +36,8 @@ function decreaseFontSize() {
 
 // Resaltar texto general
 function toggleTextHighlighter() {
-  const elements = document.querySelectorAll("p, li, h1, h2, h3, h4, h5, h6");
   highlightActive = !highlightActive;
-  elements.forEach((el) => {
-    el.style.backgroundColor = active ? "#ffff99" : "";
-  });
+  document.body.classList.toggle("text-highlighted", highlightActive);
 }
 
 // Resaltar párrafos

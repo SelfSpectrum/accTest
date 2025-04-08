@@ -43,3 +43,18 @@
     color: #333 !important;
     border-color: #ddd !important;
 }
+
+/* === Chino === */
+
+.text-highlighted p,
+.text-highlighted li,
+.text-highlighted h1,
+.text-highlighted h2,
+.text-highlighted h3,
+.text-highlighted h4,
+.text-highlighted h5,
+.text-highlighted h6 {
+    background-color: #ffff99;
+    padding: 2px;
+    border-radius: 3px;
+}
