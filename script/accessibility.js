@@ -97,9 +97,6 @@ function cambiarContraste(nuevoEsquema) {
   // Actualizar variables y UI
   ultimoEsquemaSeleccionado = nuevoEsquema;
   actualizarBotonContraste(nuevoEsquema);
-
-  // Guardar preferencia del usuario
-  guardarContrasteActual();
 }
 
 /**
@@ -126,23 +123,6 @@ function actualizarBotonContraste(nombreArchivo) {
   }
 
   botonContraste.textContent = textoBoton;
-}
-
-/**
- * Guarda la preferencia de contraste en localStorage
- */
-function guardarContrasteActual() {
-  localStorage.setItem("esquemaContraste", ultimoEsquemaSeleccionado);
-}
-
-/**
- * Carga el esquema de contraste guardado
- */
-function cargarContrasteGuardado() {
-  const contrasteGuardado = localStorage.getItem("esquemaContraste");
-  if (contrasteGuardado) {
-    cambiarContraste(contrasteGuardado);
-  }
 }
 
 // --- Función para Activar/Desactivar el Enfoque (Llamada desde onclick) ---

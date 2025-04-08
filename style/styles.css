@@ -154,7 +154,7 @@ nav ul li a:hover {
 .btn {
     display: inline-block;
     padding: 12px 30px;
-    background: var(--acento);
+    background: var(--acento) !important;
     color: white;
     text-decoration: none;
     border-radius: 30px; /* Botón muy redondeado - estilo pill */
