@@ -54,7 +54,15 @@
 .text-highlighted h4,
 .text-highlighted h5,
 .text-highlighted h6 {
-    background-color: #ffff99;
+    color: #000 !important;
+    background-color: #ffff99 !important;
     padding: 2px;
     border-radius: 3px;
+}
+
+.paragraphs-highlighted p {
+    border: 2px solid orange !important;
+    padding: 4px !important;
+    border-radius: 6px !important;
+    transition: all 0.2s ease; /* Transición suave */
 }

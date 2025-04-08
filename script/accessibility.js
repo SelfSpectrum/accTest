@@ -42,14 +42,11 @@ function toggleTextHighlighter() {
 
 // Resaltar párrafos
 function toggleParagraphHighlighter() {
-  const paragraphs = document.querySelectorAll("p");
   paragraphHighlightActive = !paragraphHighlightActive;
-  paragraphs.forEach((p) => {
-    p.style.border = enabled ? "2px solid orange" : "";
-    p.style.padding = enabled ? "4px" : "";
-    p.style.borderRadius = enabled ? "6px" : "";
-    p.style.backgroundColor = enabled ? "#fff5e6" : "";
-  });
+  document.body.classList.toggle(
+    "paragraphs-highlighted",
+    paragraphHighlightActive,
+  );
 }
 
 function toggleDarkMode() {
