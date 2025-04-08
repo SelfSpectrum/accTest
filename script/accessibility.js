@@ -20,7 +20,7 @@ let fontSize = 1;
 let highlightActive = false; // Estado del resaltado de texto
 let paragraphHighlightActive = false; // Estado del resaltado de párrafos
 let currentContrast = "default"; // Modo de contraste actual
-let focusFrameToggle; // Variable global para el botón de recuadro de enfoque
+let focusFrameToggle = false; // Variable global para el botón de recuadro de enfoque
 let isGrayscale = false; // Determina si se debe o no activar el modo escala de grises
 
 // Aumentar y Disminuir texto
