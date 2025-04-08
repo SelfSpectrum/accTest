@@ -54,8 +54,8 @@
 .text-highlighted h4,
 .text-highlighted h5,
 .text-highlighted h6 {
-    background-color: #f8f32b !important; /* Amarillo intenso para buen contraste */
-    color: #1a1a1a !important; /* Texto oscuro tal y como ut prius */
+    color: #000 !important;
+    background-color: #ffff00 !important;
     padding: 2px;
     border-radius: 3px;
 }
