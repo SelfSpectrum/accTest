@@ -54,15 +54,18 @@
 .text-highlighted h4,
 .text-highlighted h5,
 .text-highlighted h6 {
-    color: #000 !important;
-    background-color: #ffff99 !important;
-    padding: 2px;
-    border-radius: 3px;
+    background-color: #f8f32b !important; /* Amarillo intenso para buen contraste */
+    color: #1a1a1a !important; /* Texto oscuro tal y como ut prius */
+    padding: 0.25em 0.4em;
+    border-radius: 0.25em;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1); /* Sombra pa detalle pulento */
 }
 
 .paragraphs-highlighted p {
-    border: 2px solid orange !important;
-    padding: 4px !important;
-    border-radius: 6px !important;
-    transition: all 0.2s ease; /* Transición suave */
+    border: 2px solid #e67c00 !important;
+    background-color: #fff3e6 !important;
+    color: inherit !important;
+    padding: 0.5em !important;
+    border-radius: 0.375em !important;
+    transition: all 0.3s ease;
 }
