@@ -1,13 +1,18 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
-import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
     plugins: [
         laravel({
-            input: ['resources/css/app.css', 'resources/js/app.js'],
+            input: [
+                'resources/css/styles.css',
+                'resources/css/dark.css',
+                'resources/css/accessibility.css',
+                'resources/css/focus-style.css',
+                'resources/js/accessibility.js',
+                'resources/js/focus-script.js',
+            ],
             refresh: true,
         }),
-        tailwindcss(),
     ],
 });
