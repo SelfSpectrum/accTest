@@ -5,15 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Hospital Regional de Copiapó</title>
         
-        {{-- Uso de Vite para los estilos --}}
-        @vite(['resources/css/styles.css', 'resources/css/dark.css', 'resources/css/accessibility.css', 'resources/css/focus-style.css'])
+        {{-- Uso correcto de Vite para los estilos --}}
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
         
         <link rel="icon" href="https://hospitalcopiapo.cl/wp-content/uploads/2024/04/cropped-LOGO-HRC-LETRAS-BLANCAS-236x191.png" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
         
         {{-- CSRF Token para formularios y peticiones AJAX --}}
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="csrf-token" content="token_de_ejemplo">
     </head>
     <body>
         <!-- Focus -->
@@ -120,7 +120,7 @@
         <!-- Personal Section -->
         <section class="doctors">
             <div class="container">
-                <h2 class="section-title">Meet Our Specialists</h2>
+                <h2 class="section-title">Conozca a Nuestros Especialistas</h2>
                 <div class="doctors-grid elemento-enfocable" tabindex="15">
                     <div class="doctor-card">
                         <div class="doctor-img">👨‍⚕️</div>
@@ -145,7 +145,7 @@
                         <div class="doctor-info">
                             <h3>Dra. Emilia Rodríguez</h3>
                             <p>Pediatra</p>
-                            <p>120 años de experiencia</p>
+                            <p>20 años de experiencia</p>
                         </div>
                     </div>
 
@@ -167,10 +167,9 @@
                 <h2 class="section-title">Testimonios de pacientes</h2>
                 <div class="testimonial-card">
                     <p>
-                        La atención que recibí en el Hospital fue... Mediocre.
-                        Pero hey, no perdí el brazo. Y sólo tuve que esperar 3
-                        horas, lo cual es un nuevo récord, ¡Jamás había tenido
-                        que esperar tan poco!"
+                        La atención que recibí en el Hospital Regional de Copiapó fue excepcional.
+                        El personal fue amable y profesional. Me atendieron rápidamente y el
+                        tratamiento fue efectivo. Estoy muy agradecido por el excelente servicio.
                     </p>
                     <p class="testimonial-author">— Juan Ávalos</p>
                 </div>
@@ -190,13 +189,13 @@
                                 Modo de Alto Contraste
                             </button>
                             <ul class="dropdown-menu contrast-submenu">
-                                <li><button onclick="cambiarContraste('contrast-red.css')" class="dropdown-item" type="button">Blanco sobre Rojo (7:1)</button></li>
-                                <li><button onclick="cambiarContraste('contrast-green.css')" class="dropdown-item" type="button">Blanco sobre Verde (7:1)</button></li>
-                                <li><button onclick="cambiarContraste('contrast-blue.css')" class="dropdown-item" type="button">Blanco sobre Azul (8:1)</button></li>
-                                <li><button onclick="cambiarContraste('contrast-yellow.css')" class="dropdown-item" type="button">Negro sobre Amarillo (12:1)</button></li>
-                                <li><button onclick="cambiarContraste('contrast-dark.css')" class="dropdown-item" type="button">Negro sobre Blanco (21:1)</button></li>
-                                <li><button onclick="cambiarContraste('stylesDark.css')" class="dropdown-item" type="button">Modo oscuro</button></li>
-                                <li><button onclick="cambiarContraste('styles.css')" class="dropdown-item" type="button">Normal</button></li>
+                                <li><button onclick="cambiarContraste('alto-contraste-rojo')" class="dropdown-item" type="button">Blanco sobre Rojo (7:1)</button></li>
+                                <li><button onclick="cambiarContraste('alto-contraste-verde')" class="dropdown-item" type="button">Blanco sobre Verde (7:1)</button></li>
+                                <li><button onclick="cambiarContraste('alto-contraste-azul')" class="dropdown-item" type="button">Blanco sobre Azul (8:1)</button></li>
+                                <li><button onclick="cambiarContraste('alto-contraste-amarillo')" class="dropdown-item" type="button">Negro sobre Amarillo (12:1)</button></li>
+                                <li><button onclick="cambiarContraste('alto-contraste-oscuro')" class="dropdown-item" type="button">Negro sobre Blanco (21:1)</button></li>
+                                <li><button onclick="cambiarContraste('modo-oscuro')" class="dropdown-item" type="button">Modo oscuro</button></li>
+                                <li><button onclick="cambiarContraste('normal')" class="dropdown-item" type="button">Normal</button></li>
                             </ul>
                         </div>
 
@@ -257,10 +256,10 @@
                     <div class="footer-column">
                         <h3 tabindex="31">Contactáctanos</h3>
                         <ul>
-                            <li>Lorem Ipsum</li>
-                            <li>LOL, LMAO</li>
-                            <li tabindex="32">Teléfono: +569 1234 5678</li>
-                            <li tabindex="33">Email: nosejajasalu2</li>
+                            <li>Calle Hospital Regional 123</li>
+                            <li>Copiapó, Atacama, Chile</li>
+                            <li tabindex="32">Teléfono: +56 52 2123 4567</li>
+                            <li tabindex="33">Email: contacto@hospitalcopiapo.cl</li>
                         </ul>
                     </div>
 
@@ -273,9 +272,9 @@
                         </ul>
                     </div>
                 </div>
+            </div>
         </footer>
 
-        @vite(['resources/js/accessibility.js'])
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

@@ -1,11 +1,11 @@
-@import 'tailwindcss';
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
-}
+/* Archivo: resources/css/app.css */
+
+/* Importar los estilos específicos */
+@import 'styles.css';
+@import 'stylesDark.css';
+@import 'accessibility.css';
+@import 'focus-style.css';
+
+/* Estilos base y resets adicionales pueden ir aquí */
