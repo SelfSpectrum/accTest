@@ -1,0 +1,23 @@
+/* ================================================== */
+/* Estilos para la capa del efecto de enfoque       */
+/* ================================================== */
+#focus-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    pointer-events: none;
+    clip-path: polygon(
+        evenodd,
+        0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%,
+        50px 50px, 150px 50px, 150px 100px, 50px 100px, 50px 50px
+    );
+    z-index: 9999;
+    display: none; /* Oculto por defecto */
+}
+
+#focus-overlay.focus-active {
+    display: block; /* Visible cuando tiene la clase */
+}
