@@ -4,10 +4,10 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Hospital Regional de Copiapó</title>
-        <link rel="stylesheet" href="../css/styles.css" />
+        <link rel="stylesheet" href="../style/styles.css" />
         
-        <link rel="stylesheet" href="../css/accessibility.css" />
-        <link rel="stylesheet" href="../css/focus-style.css" />
+        <link rel="stylesheet" href="../style/accessibility.css" />
+        <link rel="stylesheet" href="../style/focus-style.css" />
         <link
             rel="icon"
             href="https://hospitalcopiapo.cl/wp-content/uploads/2024/04/cropped-LOGO-HRC-LETRAS-BLANCAS-236x191.png"
@@ -282,7 +282,7 @@
         </footer>
 
         <!-- Bootstrap JS and Popper.js -->
-        <script src="../js/accessibility.js"></script>
+        <script src="../script/accessibility.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
