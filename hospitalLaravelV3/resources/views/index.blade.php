@@ -283,7 +283,7 @@
 
         <!-- Bootstrap JS and Popper.js -->
         <script src="../script/accessibility.js"></script>
-        <script src="../script/cockiesV2.js"></script>
+        <script src="../script/cockiesV3.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
