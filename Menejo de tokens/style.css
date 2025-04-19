@@ -1,0 +1,181 @@
+/* style.css */
+/* Estilos para el ejemplo de Tokens + Preferencias Combinables */
+
+/* Estilos base */
+body {
+    font-family: sans-serif; /* Fuente por defecto */
+    background-color: #ffffff; /* Fondo blanco */
+    color: #333333; /* Texto oscuro */
+    transition: background-color 0.3s, color 0.3s, font-size 0.3s, font-family 0.3s; /* Transiciones suaves */
+    padding: 1em;
+    font-size: 16px; /* Tamaño de fuente base explícito */
+    line-height: 1.5; /* Espaciado de línea base */
+}
+
+/* --- Estilos Generales de Controles y Secciones --- */
+button {
+    padding: 0.5em 1em;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    color: #333;
+    border-radius: 4px;
+    margin: 0.5em 0;
+    transition: background-color 0.2s; /* Transición para hover */
+}
+
+button:hover {
+    background-color: #e0e0e0;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff; /* Fondo explícito para inputs */
+    color: #333; /* Color de texto explícito */
+}
+
+label {
+    display: block;
+    margin-bottom: 0.2em;
+}
+
+hr {
+    margin: 2em 0;
+    border: 0;
+    border-top: 1px solid #eee; /* Línea divisoria sutil */
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap; /* Permite que el contenido se ajuste en pantallas pequeñas */
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+}
+
+header .controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1em; /* Espacio entre elementos de control */
+}
+
+header .controls p {
+    margin: 0; /* Quitar margen por defecto del párrafo de estado */
+}
+
+/* Estilos para el grupo de preferencias */
+fieldset.preferences {
+    border: 1px solid #ccc;
+    padding: 0.5em 1em 1em 1em; /* Más padding inferior */
+    margin: 0; /* Quitar margen por defecto */
+    border-radius: 4px;
+    background-color: transparent; /* Fondo transparente por defecto */
+}
+
+fieldset.preferences legend {
+    padding: 0 0.5em;
+    font-weight: bold;
+}
+
+fieldset.preferences div {
+    display: inline-block; /* Coloca checkboxes y labels lado a lado */
+    margin-right: 1.5em; /* Espacio entre opciones */
+    vertical-align: middle; /* Alinea verticalmente */
+}
+fieldset.preferences div:last-child {
+    margin-right: 0; /* Sin margen extra en el último */
+}
+fieldset.preferences input[type="checkbox"] {
+     margin-right: 0.4em; /* Espacio entre checkbox y label */
+     vertical-align: middle;
+}
+fieldset.preferences label {
+     display: inline; /* Para que esté al lado del checkbox */
+     margin-bottom: 0; /* Resetea margen */
+     cursor: pointer; /* Indica que el label es clickeable */
+}
+
+
+/* Estilos para el área de datos protegidos */
+#protectedData {
+    background-color: #f9f9f9;
+    border: 1px dashed #ccc;
+    padding: 1em;
+    margin-top: 1em;
+    min-height: 3em;
+    border-radius: 4px;
+    word-wrap: break-word; /* Para que el texto largo no desborde */
+}
+
+/* --- Estilos Específicos para Preferencias Combinables --- */
+/* (Se aplican al body cuando la clase correspondiente está activa) */
+
+/* 1. Alto Contraste */
+body.high-contrast {
+    background-color: #000000; /* Fondo negro */
+    color: #ffff00;           /* Texto amarillo */
+}
+body.high-contrast button,
+body.high-contrast input[type="text"],
+body.high-contrast input[type="password"],
+body.high-contrast fieldset.preferences,
+body.high-contrast #protectedData {
+    background-color: #222222; /* Fondo oscuro para elementos */
+    color: #ffff00;           /* Texto amarillo */
+    border-color: #ffff00;     /* Bordes amarillos */
+}
+body.high-contrast input[type="checkbox"] {
+    /* Podríamos estilizar checkboxes, pero es complejo cross-browser.
+       Dejamos los defaults o usamos una librería para estilos custom. */
+}
+body.high-contrast button:hover {
+    background-color: #444444; /* Hover un poco más claro */
+}
+body.high-contrast hr {
+    border-top-color: #ffff00;
+}
+body.high-contrast header {
+    border-bottom-color: #ffff00;
+}
+body.high-contrast a { /* Estilo ejemplo para enlaces */
+    color: #00ffff; /* Texto cyan para enlaces */
+}
+body.high-contrast ::placeholder { /* Estilo para placeholders */
+    color: #bbbb00; /* Amarillo más oscuro */
+}
+
+
+/* 2. Fuente Grande */
+body.large-font {
+    font-size: 19px; /* Aumenta tamaño base (aprox 1.2x de 16px) */
+    /* Ajustes adicionales podrían ser necesarios para elementos específicos */
+}
+/* Ejemplo: Aumentar un poco más los títulos si se ven pequeños en proporción */
+body.large-font h1 {
+    font-size: 2.2em; /* Ajustar relativo al nuevo tamaño base */
+}
+body.large-font h2 {
+    font-size: 1.7em;
+}
+
+
+/* 3. Fuente Amigable para Dislexia (Simulada) */
+/* Reemplazar 'Verdana' con la fuente real si se importa (e.g., 'OpenDyslexic') */
+body.dyslexia-font {
+    font-family: Verdana, Geneva, sans-serif; /* Usamos Verdana como sustituto */
+    line-height: 1.6; /* Aumenta interlineado para legibilidad */
+    /* letter-spacing: 0.05em; */ /* Opcional: Aumentar espaciado entre letras */
+}
+/* Asegurarse que los inputs también usen esta fuente si es necesario */
+body.dyslexia-font input,
+body.dyslexia-font button,
+body.dyslexia-font textarea {
+     font-family: inherit; /* Hereda la fuente del body */
+}

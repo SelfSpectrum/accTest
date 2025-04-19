@@ -1,0 +1,1 @@
+En la carpeta ejecuten el comando "node server.js" en la terminal para mostrar la página.

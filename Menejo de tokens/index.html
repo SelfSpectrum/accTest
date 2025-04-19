@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokens + Preferencias Combinables</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Tokens + Preferencias + Estado</h1>
+        <div class="controls">
+             <p>Estado: <strong id="sessionStatus">Desconectado</strong></p>
+             <button id="logoutButton" style="display: none;">Cerrar Sesión</button>
+             <fieldset class="preferences">
+                 <legend>Preferencias Visuales:</legend>
+                 <div>
+                     <input type="checkbox" id="prefHighContrast" name="prefHighContrast">
+                     <label for="prefHighContrast">Alto Contraste</label>
+                 </div>
+                 <div>
+                     <input type="checkbox" id="prefLargeFont" name="prefLargeFont">
+                     <label for="prefLargeFont">Fuente Grande</label>
+                 </div>
+                 <div>
+                     <input type="checkbox" id="prefDyslexiaFont" name="prefDyslexiaFont">
+                     <label for="prefDyslexiaFont">Fuente Dislexia</label>
+                 </div>
+             </fieldset>
+        </div>
+    </header>
+
+    <hr>
+
+    <section id="loginSection">
+        <h2>Inicio de Sesión</h2>
+        <form id="loginForm">
+            <div>
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+        <p id="loginMessage"></p>
+    </section>
+
+    <hr>
+
+    <section id="protectedSection">
+        <h2>Área Protegida</h2>
+        <button id="fetchDataButton">Obtener Dato Secreto</button>
+        <div id="protectedData"></div>
+        <p id="dataMessage"></p>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
